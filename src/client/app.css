@@ -1,0 +1,23 @@
+.hr-mtg-page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--now-font-family, "Source Sans Pro", Arial, sans-serif);
+}
+
+.hr-mtg-header {
+  margin-bottom: 24px;
+}
+
+.hr-mtg-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(var(--now-color--text--primary, 22, 27, 28));
+  margin: 12px 0 8px 0;
+}
+
+.hr-mtg-subtitle {
+  font-size: 14px;
+  color: rgb(var(--now-color--text--secondary, 72, 79, 81));
+  margin: 0 0 16px 0;
+}
