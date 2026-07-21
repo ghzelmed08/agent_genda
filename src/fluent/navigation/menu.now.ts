@@ -6,7 +6,7 @@ const hrMeetingMenu = ApplicationMenu({
   $id: Now.ID["hr_meeting_menu"],
   title: "HR Meeting Scheduler",
   hint: "Schedule and manage HR meetings between employees and agents",
-  description: "HR Meeting Scheduler application navigation",
+  description: "HR Meeting Scheduler1 application navigation",
   active: true,
   order: 500,
 });
