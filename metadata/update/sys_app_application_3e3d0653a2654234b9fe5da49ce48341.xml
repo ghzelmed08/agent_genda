@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <description>HR Meeting Scheduler application navigation</description>
+        <device_type>browser</device_type>
+        <hint>Schedule and manage HR meetings between employees and agents</hint>
+        <name/>
+        <order>500</order>
+        <roles/>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3e3d0653a2654234b9fe5da49ce48341</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HR Meeting Scheduler</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="agent agenda" source="global">f40f0600c3d6c7500deb9e377d013133</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="agent agenda">f40f0600c3d6c7500deb9e377d013133</sys_scope>
+        <sys_update_name>sys_app_application_3e3d0653a2654234b9fe5da49ce48341</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+        <title>HR Meeting Scheduler</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

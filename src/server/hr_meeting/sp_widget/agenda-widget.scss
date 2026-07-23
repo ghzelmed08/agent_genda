@@ -1,0 +1,109 @@
+.hr-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: inherit;
+}
+
+.hr-agenda-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hr-agenda-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+}
+
+.hr-agenda-existing {
+    padding: 0.5rem 0.75rem;
+    background: #eef6ff;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.hr-agenda-error {
+    color: #b00020;
+    font-size: 0.85rem;
+}
+
+.hr-agenda-calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 0.4rem;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.hr-agenda-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 0.4rem;
+}
+
+.hr-agenda-day,
+.hr-agenda-slot {
+    padding: 0.4rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.hr-agenda-day--available,
+.hr-agenda-slot--available {
+    background: #d9f2d9;
+    color: #1e5e20;
+}
+
+.hr-agenda-day--unavailable,
+.hr-agenda-slot--unavailable {
+    background: #e8e8e8;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.hr-agenda-day--selected {
+    border-color: #1565c0;
+    box-shadow: 0 0 0 2px rgba(21, 101, 192, 0.35);
+}
+
+.hr-agenda-slot--selected {
+    background: #cfe8fb;
+    color: #0d47a1;
+    border-color: #1565c0;
+}
+
+.hr-agenda-confirm-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    background: #fafafa;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.hr-agenda-confirm-yes,
+.hr-agenda-confirm-no {
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    color: white;
+}
+
+.hr-agenda-confirm-yes {
+    background: #2e7d32;
+}
+
+.hr-agenda-confirm-no {
+    background: #b00020;
+}

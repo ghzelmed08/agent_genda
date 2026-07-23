@@ -1,0 +1,64 @@
+<div class="hr-agenda">
+    <div ng-if="c.loading" class="hr-agenda-loading">Loading agent agenda...</div>
+
+    <div ng-if="!c.loading && c.error" class="hr-agenda-error">{{c.error}}</div>
+
+    <div ng-if="!c.loading && !c.error && c.eligible">
+        <label class="hr-agenda-checkbox-label">
+            <input type="checkbox" ng-model="c.showAgenda" />
+            <span>Show HR agent agenda<span ng-if="c.agentName"> ({{c.agentName}})</span></span>
+        </label>
+
+        <div ng-if="c.showAgenda" class="hr-agenda-panel">
+            <div ng-if="c.existingAppointment" class="hr-agenda-existing">
+                Confirmed meeting: {{c.existingAppointment.date}} &middot;
+                {{c.formatTime(c.existingAppointment.start)}}-{{c.formatTime(c.existingAppointment.end)}}
+            </div>
+
+            <div ng-if="c.bookError" class="hr-agenda-error">{{c.bookError}}</div>
+
+            <div class="hr-agenda-calendar">
+                <button
+                    type="button"
+                    ng-repeat="day in c.days track by day.date"
+                    ng-click="c.selectDay(day)"
+                    ng-disabled="!day.hasAvailability"
+                    ng-class="{
+                        'hr-agenda-day--available': day.hasAvailability,
+                        'hr-agenda-day--unavailable': !day.hasAvailability,
+                        'hr-agenda-day--selected': c.selectedDate === day.date
+                    }"
+                    class="hr-agenda-day"
+                >
+                    {{c.formatDate(day.date)}}
+                </button>
+            </div>
+
+            <div class="hr-agenda-slots" ng-if="c.selectedDay">
+                <button
+                    type="button"
+                    ng-repeat="slot in c.selectedDay.slots track by (slot.start + slot.end)"
+                    ng-click="c.selectSlot(slot)"
+                    ng-disabled="!slot.available"
+                    ng-class="{
+                        'hr-agenda-slot--selected': c.isSelectedSlot(slot),
+                        'hr-agenda-slot--available': slot.available && !c.isSelectedSlot(slot),
+                        'hr-agenda-slot--unavailable': !slot.available
+                    }"
+                    class="hr-agenda-slot"
+                >
+                    {{c.formatTime(slot.start)}} - {{c.formatTime(slot.end)}}
+                </button>
+            </div>
+
+            <div class="hr-agenda-confirm-bar" ng-if="c.selectedSlot">
+                <span>
+                    Confirm slot: {{c.selectedDate}} &middot;
+                    {{c.formatTime(c.selectedSlot.start)}}-{{c.formatTime(c.selectedSlot.end)}}?
+                </span>
+                <button type="button" class="hr-agenda-confirm-yes" ng-disabled="c.booking" ng-click="c.confirmBooking()">Yes</button>
+                <button type="button" class="hr-agenda-confirm-no" ng-disabled="c.booking" ng-click="c.cancelSelection()">No</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{
+  "scope": "global",
+  "scopeId": "f40f0600c3d6c7500deb9e377d013133",
+  "name": "agent agenda",
+  "tsconfigPath": "./src/server/tsconfig.json"
+}

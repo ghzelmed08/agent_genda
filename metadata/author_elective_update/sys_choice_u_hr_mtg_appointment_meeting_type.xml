@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="meeting_type" table="u_hr_mtg_appointment" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>meeting_type</element>
+            <name>u_hr_mtg_appointment</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+            <sys_id>90fcd0c22000451893f4b3f7e5423f32</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>meeting_type</sys_name>
+            <sys_package display_value="agent agenda" source="global">f40f0600c3d6c7500deb9e377d013133</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="agent agenda">f40f0600c3d6c7500deb9e377d013133</sys_scope>
+            <sys_update_name>sys_choice_u_hr_mtg_appointment_meeting_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>meeting_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Phone Call</label>
+            <language>en</language>
+            <name>u_hr_mtg_appointment</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>569266bd8d6d423da1ea67b0a6eee81a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+            <value>call</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>meeting_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Video Conference</label>
+            <language>en</language>
+            <name>u_hr_mtg_appointment</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c51e826808774c0399d84c5ec0e053d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+            <value>video</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>meeting_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In-Person</label>
+            <language>en</language>
+            <name>u_hr_mtg_appointment</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>286d438d8cab47f7bc73efb79491b3c8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+            <value>in_person</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
