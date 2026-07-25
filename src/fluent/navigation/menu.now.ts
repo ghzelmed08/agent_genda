@@ -77,3 +77,19 @@ Record({
     order: 400,
   },
 });
+
+// Module: Administration (singleton configuration for default schedule)
+Record({
+  $id: Now.ID["module_admin_config"],
+  table: "sys_app_module",
+  data: {
+    title: "Administration",
+    application: hrMeetingMenu,
+    link_type: "LIST",
+    name: "u_hr_mtg_config",
+    hint: "Manage application configuration including default availability schedule",
+    roles: ["global.hr_mtg_admin"],
+    active: true,
+    order: 500,
+  },
+});

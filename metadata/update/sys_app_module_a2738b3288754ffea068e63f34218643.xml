@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="HR Meeting Scheduler">3e3d0653a2654234b9fe5da49ce48341</application>
+        <assessment/>
+        <device_type/>
+        <filter table="u_hr_mtg_appointment">hr_agent=javascript:gs.getUserID()^status!=cancelled^ORDERBYdate^ORDERBYstart_time<item endquery="false" field="" goto="false" newquery="false" operator="ORDERBY" or="false" value="date"/>
+            <item endquery="false" field="" goto="false" newquery="false" operator="ORDERBY" or="false" value="start_time"/>
+        </filter>
+        <hint>View your upcoming appointments</hint>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title/>
+        <mobile_view_name/>
+        <name>u_hr_mtg_appointment</name>
+        <order>100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>false</require_confirmation>
+        <roles>global.hr_mtg_agent,global.hr_mtg_admin</roles>
+        <route/>
+        <screen/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a2738b3288754ffea068e63f34218643</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Agenda</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="agent agenda" source="global">f40f0600c3d6c7500deb9e377d013133</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="agent agenda">f40f0600c3d6c7500deb9e377d013133</sys_scope>
+        <sys_update_name>sys_app_module_a2738b3288754ffea068e63f34218643</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:53</sys_updated_on>
+        <timeline_page/>
+        <title>My Agenda</title>
+        <uncancelable>false</uncancelable>
+        <ux_list/>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

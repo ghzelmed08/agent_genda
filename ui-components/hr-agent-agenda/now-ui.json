@@ -1,0 +1,10 @@
+{
+  "name": "x-1879266-agent-agenda-hr-agent-agenda",
+  "displayName": "HR Agent Agenda",
+  "description": "Shows a checkbox on the HR case view; when checked, displays the assigned HR agent's 90-day availability so the employee can book a meeting slot.",
+  "properties": {
+    "caseId": {
+      "default": ""
+    }
+  }
+}

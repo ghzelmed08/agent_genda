@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint/>
+        <html><![CDATA[
+<!-- @fluent-import-html WARNING: This file was imported from the output of a static build. Modifications of any kind are likely to result in unintended behavior. In most cases, you should edit the source file of the HTML imported below. If you are absolutely certain you want to take control of this HTML, you can remove this comment to prevent the SDK from regenerating it. However, you will then be responsible for the management of this HTML in your Fluent file. -->
+<html class="-polaris">
+  <head>
+    <title>HR Meeting Scheduler</title>
+    <!-- @sdk:now-ux-globals -->
+    <!-- Resolved from sdk:now-ux-globals tag at NowSDK build time to support earlier Glide releases -->
+    <script>window.NOW = {};
+window.NOW.user = {};
+window.NOW.batch_glide_ajax_requests = false;
+window.NOW.isUsingPolaris = true;
+window.NOW.exclude_dark_theme = "false";
+window.g_ck = "$[gs.getSession().getSessionToken() || gs.getSessionToken()]";</script>
+    <!-- Include ServiceNow's required scripts -->
+    <g:requires name="scripts/doctype/functions_bootstrap14.js"></g:requires>
+    <g:requires name="scripts/lib/prototype.js"></g:requires>
+    <g:requires name="scripts/classes/ajax/GlideURL.js"></g:requires>
+    <g:requires name="scripts/doctype/CustomEventManager.js"></g:requires>
+    <g:requires name="scripts/classes/ajax/GlideAjax.js"></g:requires>
+    <g:requires name="scripts/classes/GlideUser.js"></g:requires>
+    <g2:client_script type="user"></g2:client_script>
+    <link rel="preload" href="/uxasset/set-cache-buster/$[UxFrameworkScriptables.getFlushTimestamp()].js" as="script"></link>
+    <g:requires name="scripts/polaris_theme_refresh_observer.js"></g:requires>
+    <link data-source-id="glide-theme" id="polarisberg_theme_variables" rel="stylesheet" href="/$uxappimmutables.do?sysparm_request_type=ux_theme$[AMP]sysparm_app_sys_id=c86a62e2c7022010099a308dc7c26022$[AMP]uxpcb=$[sn_ui.PolarisUI.getThemeVariableCssCacheKey()]"></link>
+    <script type="module" src="/uxasset/externals/@devsnc/library-uxf/index.jsdbx"></script>
+    <!-- @sdk:now-ux-globals -->
+    <script>if (!Array.from) {
+        Array.from = (function () {
+          var toStr = Object.prototype.toString;
+          var isCallable = function (fn) { return typeof fn === 'function' || toStr.call(fn) === '[object Function]'; };
+          var toInteger = function (value) { var number = Number(value); if (isNaN(number)) return 0; if (number === 0 || !isFinite(number)) return number; return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number)); };
+          var maxSafeInteger = Math.pow(2, 53) - 1;
+          var toLength = function (value) { var len = toInteger(value); return Math.min(Math.max(len, 0), maxSafeInteger); };
+          return function from(arrayLike) {
+            var C = this;
+            var items = Object(arrayLike);
+            if (arrayLike == null) throw new TypeError('Array.from requires an array-like object - not null or undefined');
+            var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+            var T;
+            if (typeof mapFn !== 'undefined') {
+              if (!isCallable(mapFn)) throw new TypeError('Array.from: when provided, the second argument must be a function');
+              if (arguments.length > 2) T = arguments[2];
+            }
+            var len = toLength(items.length);
+            var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+            var k = 0;
+            var kValue;
+            while (k < len) {
+              kValue = items[k];
+              if (mapFn) A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+              else A[k] = kValue;
+              k += 1;
+            }
+            A.length = len;
+            return A;
+          };
+        }());
+      }</script>
+    <script src="/uxasset/externals/global/main.jsdbx?uxpcb=$[UxFrameworkScriptables.getFlushTimestamp()]" type="module"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>]]></html>
+        <name>hr_meeting_scheduler</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:55</sys_created_on>
+        <sys_id>8e79518e55e744d48a4821b97dd6f082</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>hr_meeting_scheduler</sys_name>
+        <sys_package display_value="agent agenda" source="global">f40f0600c3d6c7500deb9e377d013133</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="agent agenda">f40f0600c3d6c7500deb9e377d013133</sys_scope>
+        <sys_update_name>sys_ui_page_8e79518e55e744d48a4821b97dd6f082</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:55</sys_updated_on>
+    </sys_ui_page>
+    <sn_glider_source_artifact_m2m action="INSERT_OR_UPDATE">
+        <application_file display_value="hr_meeting_scheduler">8e79518e55e744d48a4821b97dd6f082</application_file>
+        <source_artifact display_value="hr_meeting_scheduler.do - BYOUI Files">70faaf644cf747b5af37802f2c8ad20a</source_artifact>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:55</sys_created_on>
+        <sys_id>0308d83de81e45b6b5d80b04ee3f94b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:55</sys_updated_on>
+    </sn_glider_source_artifact_m2m>
+    <sn_glider_source_artifact action="INSERT_OR_UPDATE">
+        <name>hr_meeting_scheduler.do - BYOUI Files</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:55</sys_created_on>
+        <sys_id>70faaf644cf747b5af37802f2c8ad20a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:55</sys_updated_on>
+    </sn_glider_source_artifact>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>933336</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>application/zip</content_type>
+        <file_name>hr_meeting_scheduler.do - BYOUI Files.zip</file_name>
+        <hash>f4ba53fd834643db6a63ee8cd77a7603897a14db2ca0cfed54b971bbbccd2de5</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>6855</size_bytes>
+        <size_compressed>3031</size_compressed>
+        <state/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:55</sys_created_on>
+        <sys_id>b76ca3cf34b76bbb57445e771d84364f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 20:16:55</sys_updated_on>
+        <table_name>sn_glider_source_artifact</table_name>
+        <table_sys_id>70faaf644cf747b5af37802f2c8ad20a</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length/>
+        <position>0</position>
+        <sys_attachment display_value="hr_meeting_scheduler.do - BYOUI Files.zip" sys_id="b76ca3cf34b76bbb57445e771d84364f">b76ca3cf34b76bbb57445e771d84364f</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 20:16:55</sys_created_on>
+        <sys_id>dba87971493d632b0c00965b00164614</sys_id>
+    </sys_attachment_doc>
+</record_update>

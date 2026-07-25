@@ -1,0 +1,17 @@
+{
+  "name": "hr-agent-agenda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Now Experience UI component: HR agent agenda checkbox + 90-day slot picker for the Employee Center Pro HR case page",
+  "scripts": {
+    "build": "now-ui build",
+    "start": "now-ui start"
+  },
+  "dependencies": {
+    "@servicenow/ui-core": "*",
+    "@servicenow/ui-renderer-snabbdom": "*"
+  },
+  "devDependencies": {
+    "@servicenow/cli": "*"
+  }
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="day_of_week" table="u_hr_mtg_availability" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>day_of_week</element>
+            <name>u_hr_mtg_availability</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_id>ba5514204dbe4bec9dc8e9d5832a43a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>day_of_week</sys_name>
+            <sys_package display_value="agent agenda" source="global">f40f0600c3d6c7500deb9e377d013133</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="agent agenda">f40f0600c3d6c7500deb9e377d013133</sys_scope>
+            <sys_update_name>sys_choice_u_hr_mtg_availability_day_of_week</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Monday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a5464c9852304327a4cbe987fc626b80</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>monday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Tuesday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c9beb9d39c63465d97e976bd02ebc8ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>tuesday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wednesday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3048e354120942c687c96d6666d4654c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>wednesday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Thursday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3716f91f51454459bac424c0d2dcbb30</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>thursday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Friday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>df4a3172decf436f98113e7afa9a55fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>friday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Saturday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0cefb27b40454f9b94b636c702012774</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>saturday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>day_of_week</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sunday</label>
+            <language>en</language>
+            <name>u_hr_mtg_availability</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-20 20:16:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b3c6557b65e74a3ea392fbe8e8cca745</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-20 20:16:54</sys_updated_on>
+            <value>sunday</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
