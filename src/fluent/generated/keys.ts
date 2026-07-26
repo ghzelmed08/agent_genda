@@ -251,14 +251,32 @@ declare global {
                     src_server_appointmentRules_ts: {
                         table: 'sys_module'
                         id: '3c5999f32c054f7d97ece16ededb69e0'
+                        deleted: true
+                    }
+                    src_server_checkEligibility_ts: {
+                        table: 'sys_module'
+                        id: '57e50dbf8d1f40a9b2d1d47a998a9f65'
                     }
                     src_server_hr_meeting_agendaService_ts: {
                         table: 'sys_module'
                         id: 'abd5d45f837441d192080d4f04e2220e'
                     }
+                    src_server_hr_meeting_bookSlot_ts: {
+                        table: 'sys_module'
+                        id: '23198ebe0480408881bed218d63aed96'
+                    }
+                    src_server_hr_meeting_getAgenda_ts: {
+                        table: 'sys_module'
+                        id: '4627a945885542e59fd3919785dc2e63'
+                    }
                     src_server_hr_meeting_restHandlers_ts: {
                         table: 'sys_module'
                         id: 'ce2c70722bcf4962aeac408ae6263c18'
+                        deleted: true
+                    }
+                    src_server_hr_meeting_restStatus_ts: {
+                        table: 'sys_module'
+                        id: 'e843c0f93168435286333a6eb5a70ebb'
                     }
                     'src_server_hr_meeting_scheduled-scripts_hr-mtg-agenda-tab-daily_js': {
                         table: 'sys_module'
@@ -291,6 +309,10 @@ declare global {
                     src_server_hr_meeting_tables_ts: {
                         table: 'sys_module'
                         id: '27b2c2e503364b869b7af2d7af76ab4f'
+                    }
+                    src_server_preventDoubleBooking_ts: {
+                        table: 'sys_module'
+                        id: '0bb800bd1c9c43f9bd9a22fb3e0c4fe8'
                     }
                     src_server_script_ts: {
                         table: 'sys_module'

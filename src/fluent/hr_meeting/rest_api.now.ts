@@ -1,5 +1,6 @@
 import { RestApi, Acl } from '@servicenow/sdk/core'
-import { getAgenda, bookSlot } from '../../server/hr_meeting/restHandlers'
+import getAgenda from '../../server/hr_meeting/getAgenda'
+import bookSlot from '../../server/hr_meeting/bookSlot'
 
 // Gate the endpoint to HR-context users via standard ServiceNow HRSD roles (basic HR agent,
 // Employee Center employee) or the app's own admin role -- not "any logged in user". The REST

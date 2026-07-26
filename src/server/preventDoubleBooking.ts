@@ -3,8 +3,13 @@ import { gs, GlideRecord } from "@servicenow/glide";
 /**
  * Prevents double-booking: ensures no other non-cancelled appointment exists
  * for the same agent on the same date with overlapping time.
+ *
+ * Default export, not named: see the comment in server/hr_meeting/getAgenda.ts -- the Fluent
+ * SDK generates a destructured require() wrapper for a named export used as a business rule's
+ * `script:`, and that destructuring isn't supported by ServiceNow's script engine. A default
+ * export avoids it.
  */
-export function preventDoubleBooking(current: any) {
+export default function preventDoubleBooking(current: any) {
   var agent = current.getValue("hr_agent");
   var date = current.getValue("date");
   var startTime = current.getValue("start_time");
@@ -23,31 +28,6 @@ export function preventDoubleBooking(current: any) {
   if (gr.hasNext()) {
     gs.addErrorMessage(
       "This time slot is already booked for the selected agent. Please choose a different time."
-    );
-    current.setAbortAction(true);
-  }
-}
-
-/**
- * Eligibility gate: verifies the employee has an active HR case 
- * with the specified agent before allowing an appointment to be created.
- */
-export function checkEligibility(current: any) {
-  var employee = current.getValue("employee");
-  var hrCase = current.getValue("hr_case");
-  var agent = current.getValue("hr_agent");
-
-  // Verify the HR case exists, is active, and involves the specified employee and agent
-  var gr = new GlideRecord("sn_hr_core_case");
-  gr.addQuery("sys_id", hrCase);
-  gr.addQuery("active", true);
-  gr.addQuery("opened_for", employee);
-  gr.addQuery("assigned_to", agent);
-  gr.query();
-
-  if (!gr.hasNext()) {
-    gs.addErrorMessage(
-      "Appointment cannot be created: the employee does not have an active HR case assigned to the selected agent."
     );
     current.setAbortAction(true);
   }
