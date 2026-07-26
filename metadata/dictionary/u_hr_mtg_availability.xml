@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="7a339288c3d6c7500deb9e377d01312b" label="HR Meeting Availability" max_length="40" name="u_hr_mtg_availability" type="collection"/>
-</database>
