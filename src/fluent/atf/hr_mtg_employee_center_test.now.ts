@@ -1,15 +1,24 @@
 import { Test } from '@servicenow/sdk/core'
 
-// Inline template literal (not Now.include()) because the script interpolates hrCase.record_id,
-// a prior step's output, via GEM substitution -- see the atf-ui-test-script-guide.
+// DISABLED (active: false): the UI-flow step below (atf.uiTestScript.runTest) required the
+// `uiTestScript` ATF category, added to the Fluent SDK in @servicenow/sdk 4.9.0. The actual
+// build/install target for this app is pinned to @servicenow/sdk 4.8.0 (see package.json),
+// whose Test() builder only exposes: applicationNavigator, email, reporting,
+// responsiveDashboard, rest, server, catalog, form -- no uiTestScript, no generic client-script
+// step. Confirmed against node_modules/@servicenow/sdk-core/dist/app/Test.d.ts at 4.8.0. This
+// test's whole point was verifying real browser widget interaction (checkbox, day/slot
+// selection, confirm/cancel), which has no 4.8.0-compatible equivalent -- server-side ATF
+// categories (rest, form, server) can't drive an sp_widget's Angular controller. Left in place
+// (not deleted), with only the incompatible step removed, so the user/case/seeding setup is
+// preserved and the test can be re-enabled once the platform's SDK is upgraded to 4.9+.
 export const hrMtgEmployeeCenterTest = Test(
     {
         $id: Now.ID['atf-ec-test'],
         name: 'Employee Center: HR Agent Agenda widget on hrm_ticket_page',
         description:
-            'Navigates to /esc?id=hrm_ticket_page for a sn_hr_core_case with an assigned agent, as the case\'s own employee. Checks the "Show HR agent agenda" checkbox, selects an available day and slot (turns selected), clicks "No" on the confirm bar and asserts the bar disappears and the slot is re-selectable (the reject-and-reselect conditional state), then re-selects the same slot and clicks "Yes", asserting the "Confirmed meeting" banner renders and a u_hr_mtg_appointment with status=booked is persisted server-side for the case.',
+            'Navigates to /esc?id=hrm_ticket_page for a sn_hr_core_case with an assigned agent, as the case\'s own employee. Checks the "Show HR agent agenda" checkbox, selects an available day and slot (turns selected), clicks "No" on the confirm bar and asserts the bar disappears and the slot is re-selectable (the reject-and-reselect conditional state), then re-selects the same slot and clicks "Yes", asserting the "Confirmed meeting" banner renders and a u_hr_mtg_appointment with status=booked is persisted server-side for the case. DISABLED pending @servicenow/sdk 4.9+ (see comment above).',
         failOnServerError: true,
-        active: true,
+        active: false,
     },
     (atf) => {
         // Role granted below via GlideRecord in the seeding script, not through createUser's
@@ -35,7 +44,7 @@ export const hrMtgEmployeeCenterTest = Test(
             impersonate: false,
         })
 
-        const hrCase = atf.server.recordInsert({
+        atf.server.recordInsert({
             $id: Now.ID['atf-ec-insert-case'],
             table: 'sn_hr_core_case',
             fieldValues: {
@@ -80,68 +89,12 @@ export const hrMtgEmployeeCenterTest = Test(
             `,
         })
 
-        atf.uiTestScript.runTest({
-            $id: Now.ID['atf-ec-run-ui-flow'],
-            script: `
-                await sn_atf.impersonate('atf_hr_mtg_employee_ec')
+        // Removed: atf.uiTestScript.runTest(...) -- not available in @servicenow/sdk 4.8.0.
+        // See the DISABLED comment on the Test() config above for why.
 
-                const caseId = '${hrCase.record_id}'
-                await sn_atf.navigate('/esc?id=hrm_ticket_page&table=sn_hr_core_case&sys_id=' + caseId)
-
-                const checkbox = await screen.findByLabelText(/Show HR agent agenda/i, { timeout: 20000 })
-                await user.click(checkbox)
-
-                const dayButtons = await screen.findAllByRole('button', { timeout: 15000 })
-                const availableDay = dayButtons.find((b) => !b.disabled)
-                if (!availableDay) throw new Error('Expected at least one available day in the 90-day grid')
-                await user.click(availableDay)
-
-                const slotsContainer = await screen.findBySelector('.hr-agenda-slots', { timeout: 15000 })
-                const slotButtons = await within(slotsContainer).findAllByRole('button')
-                const availableSlot = slotButtons.find((b) => !b.disabled)
-                if (!availableSlot) throw new Error('Expected at least one available slot on the selected day')
-                const slotLabel = availableSlot.textContent.trim()
-                await user.click(availableSlot)
-
-                const confirmBar = await screen.findByText(/Confirm slot/i, { timeout: 10000 })
-                await waitFor(() => expect(confirmBar).toBeVisible())
-
-                // "No" must clear the selection: the confirm bar disappears and the slot is
-                // pickable again (it never turns permanently unavailable from being selected).
-                const noButton = await screen.findByRole('button', { name: 'No' })
-                await user.click(noButton)
-                await waitFor(() => expect(screen.queryByText(/Confirm slot/i)).toBeNull())
-
-                const slotsContainerAgain = await screen.findBySelector('.hr-agenda-slots')
-                const slotButtonsAgain = await within(slotsContainerAgain).findAllByRole('button')
-                const sameSlot = slotButtonsAgain.find((b) => b.textContent.trim() === slotLabel)
-                if (!sameSlot || sameSlot.disabled) throw new Error('Expected the slot to be selectable again after clicking No')
-                await user.click(sameSlot)
-
-                const yesButton = await screen.findByRole('button', { name: 'Yes' })
-                await user.click(yesButton)
-
-                const confirmedBanner = await screen.findByText(/Confirmed meeting/i, { timeout: 20000 })
-                await waitFor(() => expect(confirmedBanner).toBeVisible())
-            `,
-        })
-
-        // A recordQuery/recordValidation pair can't take an encoded query built from a prior
-        // step's sys_id (fieldValues isn't a `script` field, so it doesn't get GEM substitution) --
-        // do the server-side DB assertion in a script instead, where interpolation is supported.
-        atf.server.runServerSideScript({
-            $id: Now.ID['atf-ec-validate-booked-appt'],
-            jasmineVersion: '3.1',
-            script: `
-                (function (outputs, steps, params, stepResult, assertEqual) {
-                    var gr = new GlideRecord('u_hr_mtg_appointment')
-                    gr.addQuery('hr_case', '${hrCase.record_id}')
-                    gr.addQuery('status', 'booked')
-                    gr.query()
-                    assertEqual({ name: 'booked appointment exists for the case', shouldbe: true, value: gr.next() })
-                    stepResult.setOutputMessage('Confirmed a u_hr_mtg_appointment with status=booked exists for the case')
-                })(outputs, steps, params, stepResult, assertEqual)
-            `,
-        })
+        // Removed too: the server-side validation step that asserted a booked
+        // u_hr_mtg_appointment exists -- it only made sense as a check on the outcome of the
+        // UI flow above (clicking through to confirm a booking). With that step gone, there's
+        // nothing left to have created the appointment it was checking for.
     }
 )

@@ -86,7 +86,7 @@ declare global {
                     'atf-ec-run-ui-flow': {
                         table: 'sys_atf_step'
                         id: '7d812babf8114834909fb06e29680cb7'
-                        deleted: false
+                        deleted: true
                     }
                     'atf-ec-seed-availability': {
                         table: 'sys_atf_step'
@@ -101,7 +101,7 @@ declare global {
                     'atf-ec-validate-booked-appt': {
                         table: 'sys_atf_step'
                         id: 'aecc445621a04617b41abc2fe09f03b0'
-                        deleted: false
+                        deleted: true
                     }
                     'atf-insert-payroll-case-a': {
                         table: 'sys_atf_step'
@@ -116,7 +116,7 @@ declare global {
                     'atf-run-scheduler-flow-a': {
                         table: 'sys_atf_step'
                         id: 'c4f30044cf164261aa5a520a446a76aa'
-                        deleted: false
+                        deleted: true
                     }
                     'atf-scheduler-api-test': {
                         table: 'sys_atf_test'
@@ -787,7 +787,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '2da2bfcd511e4936b7ba96a6a76cd293'
-                        deleted: false
+                        deleted: true
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_41de4a935332120028bc29cac2dc349a'
@@ -806,7 +806,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '3012b315c8974a1cb26d75230af8ea96'
-                        deleted: false
+                        deleted: true
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_bfb48f59ffdf3210f972ffffffffffb3'
@@ -1399,7 +1399,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '7b80c4fb6ecd4f1c89f6129c0cb7e380'
-                        deleted: false
+                        deleted: true
                         key: {
                             document_key: 'c4f30044cf164261aa5a520a446a76aa'
                             variable: 'e216835dffdf3210f972ffffffffff53'
@@ -2021,7 +2021,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'b1db991bb3df48beb91a38794ee975bb'
-                        deleted: false
+                        deleted: true
                         key: {
                             document_key: 'aecc445621a04617b41abc2fe09f03b0'
                             variable: '989d9e235324220002c6435723dc3484'
@@ -2205,7 +2205,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'c4ebd69c4c6e48e0899cbb9d947033db'
-                        deleted: false
+                        deleted: true
                         key: {
                             document_key: '7d812babf8114834909fb06e29680cb7'
                             variable: 'e216835dffdf3210f972ffffffffff53'
@@ -2491,7 +2491,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: 'e22fc98779884efb83551f6be653af36'
-                        deleted: false
+                        deleted: true
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_bfb48f59ffdf3210f972ffffffffffb3'
@@ -2644,7 +2644,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'f5d1a07cc3844f74be89c0b9fa1e755e'
-                        deleted: false
+                        deleted: true
                         key: {
                             document_key: 'aecc445621a04617b41abc2fe09f03b0'
                             variable: '42f2564b73031300440211d8faf6a777'
