@@ -180,6 +180,14 @@ declare global {
                         table: 'sys_script_client'
                         id: 'b91ae8836b7a4371972bc008dad0b1fc'
                     }
+                    'diagnostics-probes-acl': {
+                        table: 'sys_security_acl'
+                        id: 'f88d9111722f41a1819d803a873b6c93'
+                    }
+                    'es6-diagnostics-api': {
+                        table: 'sys_ws_definition'
+                        id: '215500eea267465b88b34186f4c462e4'
+                    }
                     hr_meeting_menu: {
                         table: 'sys_app_application'
                         id: '52907846744b4a6196549119f18b17de'
@@ -247,6 +255,62 @@ declare global {
                     package_json: {
                         table: 'sys_module'
                         id: '4c7f5a5dce05494e83c85ff0bd55bf22'
+                    }
+                    'probe-array-find-includes': {
+                        table: 'sys_ws_operation'
+                        id: '80cf8c7d98284ed7a5d745808a21a853'
+                    }
+                    'probe-arrow-function': {
+                        table: 'sys_ws_operation'
+                        id: 'c8f24c667358444182a6bdbb891350b9'
+                    }
+                    'probe-baseline': {
+                        table: 'sys_ws_operation'
+                        id: 'c62f673b729b4bb1bb57cc73ae875468'
+                    }
+                    'probe-class-syntax': {
+                        table: 'sys_ws_operation'
+                        id: '95efcd19f7db4f20833388bdc4522207'
+                    }
+                    'probe-const-let': {
+                        table: 'sys_ws_operation'
+                        id: '87bca92695624184b2b240465246b247'
+                    }
+                    'probe-default-params': {
+                        table: 'sys_ws_operation'
+                        id: '196db2639e9f4066a292c747320f039f'
+                    }
+                    'probe-destructuring-array': {
+                        table: 'sys_ws_operation'
+                        id: '029194efdeb54b118f055100d7fc9572'
+                    }
+                    'probe-destructuring-object': {
+                        table: 'sys_ws_operation'
+                        id: 'e44bf3b990db46fb8d6e79038cdec100'
+                    }
+                    'probe-for-of': {
+                        table: 'sys_ws_operation'
+                        id: '78dfa8ee6d7f4be68549e674003b323e'
+                    }
+                    'probe-map-set': {
+                        table: 'sys_ws_operation'
+                        id: 'f2e969b6bb3b40efa49040f30af14502'
+                    }
+                    'probe-nullish-coalescing': {
+                        table: 'sys_ws_operation'
+                        id: '4310282b020d4894a12cb1fb25abb559'
+                    }
+                    'probe-optional-chaining': {
+                        table: 'sys_ws_operation'
+                        id: '8e33bf5333604b3596e5f9635403b3ef'
+                    }
+                    'probe-spread': {
+                        table: 'sys_ws_operation'
+                        id: '4b813da12e1341d698e6e85bb05fbe3e'
+                    }
+                    'probe-template-literal': {
+                        table: 'sys_ws_operation'
+                        id: 'bf3d843e010047d88081e386d3832f91'
                     }
                     src_server_appointmentRules_ts: {
                         table: 'sys_module'
