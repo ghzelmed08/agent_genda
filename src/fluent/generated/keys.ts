@@ -56,27 +56,27 @@ declare global {
                     'atf-create-agent-user-a': {
                         table: 'sys_atf_step'
                         id: '27b1c04bdb174c80957ef0f805f2594a'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-create-employee-user-a': {
                         table: 'sys_atf_step'
                         id: 'dd6b4e9328dd4cf099637268e47035b9'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-create-agent-user': {
                         table: 'sys_atf_step'
                         id: '5b171a95867a41348fb2e69e75ea7222'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-create-employee-user': {
                         table: 'sys_atf_step'
                         id: '9bb83f1fd19f4f25aa956507091e8e10'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-insert-case': {
                         table: 'sys_atf_step'
                         id: '40524751139342bbaec3b9ef93f0dda2'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-query-agent-role': {
                         table: 'sys_atf_step'
@@ -86,27 +86,27 @@ declare global {
                     'atf-ec-run-ui-flow': {
                         table: 'sys_atf_step'
                         id: '7d812babf8114834909fb06e29680cb7'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-seed-availability': {
                         table: 'sys_atf_step'
                         id: 'b0e90afc3a5341bdb3707024f199a0e0'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-test': {
                         table: 'sys_atf_test'
                         id: '2d744798268f42bb89772ae1cd91d089'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-ec-validate-booked-appt': {
                         table: 'sys_atf_step'
                         id: 'aecc445621a04617b41abc2fe09f03b0'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-insert-payroll-case-a': {
                         table: 'sys_atf_step'
                         id: '2c78554eab374104ad6ee2c6ea5725bd'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-query-agent-role-a': {
                         table: 'sys_atf_step'
@@ -116,17 +116,17 @@ declare global {
                     'atf-run-scheduler-flow-a': {
                         table: 'sys_atf_step'
                         id: 'c4f30044cf164261aa5a520a446a76aa'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-scheduler-api-test': {
                         table: 'sys_atf_test'
                         id: '2a37d3bc30844ce4a73cd0fe2126eed6'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-seed-availability-a': {
                         table: 'sys_atf_step'
                         id: '4697d5ab704241ca8832412d4ff7d521'
-                        deleted: true
+                        deleted: false
                     }
                     'atf-tab-coverage-run': {
                         table: 'sys_atf_step'
@@ -309,7 +309,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '01782c9a456c497689ba8d13afaf2f5f'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: 'ff06ab840f20101091d0f00c97767e6d'
@@ -364,6 +364,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '0438870252274a92a65c23d55800cc3d'
+                        deleted: true
                         key: {
                             sys_security_acl: 'e0979b1d74e84a88bf30275881b40b79'
                             sys_user_role: {
@@ -377,6 +378,7 @@ declare global {
                     {
                         table: 'sys_user_role'
                         id: '0479da82eae74e718c8f80efb017da67'
+                        deleted: true
                         key: {
                             name: 'global.hr_mtg_agent'
                         }
@@ -504,6 +506,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '0d2fbd0097fa4f0ab8117cfab41bbbf6'
+                        deleted: true
                         key: {
                             sys_security_acl: '64cf7310741b42499ff1a8a24dc47e20'
                             sys_user_role: {
@@ -537,7 +540,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '14b4d823cf154f79b9eaeff76d3d9cd8'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '4697d5ab704241ca8832412d4ff7d521'
                             variable: '42f2564b73031300440211d8faf6a777'
@@ -554,6 +557,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '1783da01ff7d4528bf29ab3e65a3a5ad'
+                        deleted: true
                         key: {
                             sys_security_acl: 'e0979b1d74e84a88bf30275881b40b79'
                             sys_user_role: {
@@ -567,7 +571,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '18377e417ac54bd188fc4ddf15c0ed6a'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: 'b27b2b29ff6033008d3f5d9ad53bf164'
@@ -593,7 +597,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '1a378850dca44dda94326ba6b9d1a3b8'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'b0e90afc3a5341bdb3707024f199a0e0'
                             variable: '989d9e235324220002c6435723dc3484'
@@ -611,7 +615,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '20286e40dbd74c14bac4e007f05d1775'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '40524751139342bbaec3b9ef93f0dda2'
                             variable: 'dd54cf535320220002c6435723dc34fd'
@@ -634,7 +638,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '217bc2cd0659458d899052353624ecc5'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: 'ff06ab840f20101091d0f00c97767e6d'
@@ -643,7 +647,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '23bf32922d7b41acad3f97658f1fc5c4'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_41de4a935332120028bc29cac2dc349a'
@@ -653,7 +657,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '241b77870c314eaeb2e61ed85f3341f2'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: '6f69fc4aff6433008d3f5d9ad53bf18c'
@@ -756,7 +760,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '2a49dc92b66546c79a846477c587c84f'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: '8c07aba5ff6033008d3f5d9ad53bf13b'
@@ -765,7 +769,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '2c9e2f926b7245d683db2c9337d4a4ba'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: '8c07aba5ff6033008d3f5d9ad53bf13b'
@@ -774,7 +778,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '2d3747bed028499fbe506a03344bbab3'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: '1985e0ceff2433008d3f5d9ad53bf1ba'
@@ -783,7 +787,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '2da2bfcd511e4936b7ba96a6a76cd293'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_41de4a935332120028bc29cac2dc349a'
@@ -793,7 +797,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '2fc7d6e5d66a445a8168492fe1f2fb08'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: '8c07aba5ff6033008d3f5d9ad53bf13b'
@@ -802,7 +806,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '3012b315c8974a1cb26d75230af8ea96'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_bfb48f59ffdf3210f972ffffffffffb3'
@@ -823,7 +827,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '3166207c7e064195b404910285d60b5c'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '2c78554eab374104ad6ee2c6ea5725bd'
                             variable: '9024a37f671003007ba405225685efe5'
@@ -840,16 +844,29 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '3335bc9ff1fc4fd69e63e6365e3eabd1'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '2c78554eab374104ad6ee2c6ea5725bd'
                             variable: 'dd54cf535320220002c6435723dc34fd'
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '33b8db0e22c348c0a6b3bde09b15e0d3'
+                        key: {
+                            sys_security_acl: '0600fc4d59394fad917c91d463d7530c'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_variable_value'
                         id: '34f2b6baa6cc415d9c5a133588711da4'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '8c07aba5ff6033008d3f5d9ad53bf13b'
@@ -878,6 +895,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '37e6665e96cf493396c4805d78c72086'
+                        deleted: true
                         key: {
                             sys_security_acl: '502afd694c7644949ad0bee46492c30f'
                             sys_user_role: {
@@ -891,10 +909,23 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '3a5a35575ec946629c2bc4cac341fe92'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '1778a7480f20101091d0f00c97767e03'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3c532e447cf84f49b184f63eb49e14ca'
+                        key: {
+                            sys_security_acl: '64cf7310741b42499ff1a8a24dc47e20'
+                            sys_user_role: {
+                                id: '68c4418ec5094c23a892337d0233fa5a'
+                                key: {
+                                    name: 'sn_hr_sp.hrsp_employee'
+                                }
+                            }
                         }
                     },
                     {
@@ -908,7 +939,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '3cfd7fa895e444b6b10e8ad9a4a96686'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '2c78554eab374104ad6ee2c6ea5725bd'
                             variable: '90144b535320220002c6435723dc3488'
@@ -946,7 +977,21 @@ declare global {
                     },
                     {
                         table: 'sys_security_acl_role'
+                        id: '42f3b86117714b2eaf73054d7486468a'
+                        key: {
+                            sys_security_acl: '47dfbcd04aa84f359b28f21879d8cb14'
+                            sys_user_role: {
+                                id: '68c4418ec5094c23a892337d0233fa5a'
+                                key: {
+                                    name: 'sn_hr_sp.hrsp_employee'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
                         id: '4365a5020a5f418f8e93026a437b6561'
+                        deleted: true
                         key: {
                             sys_security_acl: '502afd694c7644949ad0bee46492c30f'
                             sys_user_role: {
@@ -977,7 +1022,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '46f979a219c2435199aed3e333a7f091'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '40524751139342bbaec3b9ef93f0dda2'
                             variable: '9024a37f671003007ba405225685efe5'
@@ -1011,6 +1056,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '4c220076eea94f41b6f7f70bc0bf92af'
+                        deleted: true
                         key: {
                             sys_security_acl: '4792c4e1f0cc4a40b420b1167d69b3f9'
                             sys_user_role: {
@@ -1024,6 +1070,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '4d35f51aa4714507816c836533babad4'
+                        deleted: true
                         key: {
                             sys_security_acl: '4792c4e1f0cc4a40b420b1167d69b3f9'
                             sys_user_role: {
@@ -1062,7 +1109,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '531966036a6d432d87730d596bbb692e'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: '98c44875ffa033008d3f5d9ad53bf1fa'
@@ -1091,7 +1138,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '57893ea2b5bc4d05b0b68c50b3c2e562'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: 'b27b2b29ff6033008d3f5d9ad53bf164'
@@ -1109,7 +1156,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '5a99d0789af543c89af63a731a061bd3'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '98c44875ffa033008d3f5d9ad53bf1fa'
@@ -1135,7 +1182,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: '5b88d366912943fda7f538805921bfeb'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'field_values'
                             table: 'var__m_atf_input_variable_14872288df60220062fe6c7a4df26319'
@@ -1143,9 +1190,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '5fa7f1b57e0747f3ac4ee59a9df1868e'
+                        key: {
+                            sys_security_acl: '64cf7310741b42499ff1a8a24dc47e20'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_variable_value'
                         id: '6343c70a3a3f4fbfb35b760c365f6f84'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: '98c44875ffa033008d3f5d9ad53bf1fa'
@@ -1163,6 +1223,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '655a3a5b9d78421f844b6e9701298e34'
+                        deleted: true
                         key: {
                             sys_security_acl: 'f484328ebd8241c8bab6025c3415539b'
                             sys_user_role: {
@@ -1208,6 +1269,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '68e66ccc8de54dd886ab8b8440fd3e50'
+                        deleted: true
                         key: {
                             sys_security_acl: '4792c4e1f0cc4a40b420b1167d69b3f9'
                             sys_user_role: {
@@ -1221,6 +1283,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '6b4d5f524a454a088b7da41157b6b0d1'
+                        deleted: true
                         key: {
                             sys_security_acl: '76fe3295fdf04ccf97397bb909c19d6b'
                             sys_user_role: {
@@ -1241,7 +1304,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '7107df40693445a4a8014cff7ce525bd'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: '1778a7480f20101091d0f00c97767e03'
@@ -1292,7 +1355,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '75f57cf5d47c46a0b810ac35c03699ed'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '40524751139342bbaec3b9ef93f0dda2'
                             variable: '90144b535320220002c6435723dc3488'
@@ -1318,6 +1381,7 @@ declare global {
                     {
                         table: 'sys_ui_list'
                         id: '7b641a4cc3d6c7500deb9e377d013152'
+                        deleted: true
                         key: {
                             name: 'u_hr_mtg_appointment'
                             view: {
@@ -1335,7 +1399,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '7b80c4fb6ecd4f1c89f6129c0cb7e380'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'c4f30044cf164261aa5a520a446a76aa'
                             variable: 'e216835dffdf3210f972ffffffffff53'
@@ -1357,7 +1421,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '7d6991fa61bb4bb3b3f2d3df6ec251b6'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: 'b27b2b29ff6033008d3f5d9ad53bf164'
@@ -1379,6 +1443,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '7e70ace1e0bc41e2b41a7baf379ef03c'
+                        deleted: true
                         key: {
                             sys_security_acl: '47dfbcd04aa84f359b28f21879d8cb14'
                             sys_user_role: {
@@ -1401,7 +1466,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '7fec36d80c704d0993293f8eaad837fc'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: '1985e0ceff2433008d3f5d9ad53bf1ba'
@@ -1422,6 +1487,19 @@ declare global {
                             }
                             element: 'date'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '808b240244924ec68273dd43763ee93b'
+                        key: {
+                            sys_security_acl: '87f6e6f367c243e28308690820566c26'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
+                                }
+                            }
                         }
                     },
                     {
@@ -1460,6 +1538,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '886461ed31c240e19481854fe3ee6342'
+                        deleted: true
                         key: {
                             sys_security_acl: '8ba1122abedc4acaa04413d54002fc7b'
                             sys_user_role: {
@@ -1516,7 +1595,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '8c8e3e737eba454ab18b0c731e57c6a0'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: '6f69fc4aff6433008d3f5d9ad53bf18c'
@@ -1525,6 +1604,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '8d0c4031a63c4e868fc12e9745a8f625'
+                        deleted: true
                         key: {
                             sys_security_acl: '94f447ed81c5445d9be96a40083a4efb'
                             sys_user_role: {
@@ -1553,6 +1633,7 @@ declare global {
                     {
                         table: 'sys_user_role_contains'
                         id: '8e86d81f388b4fb8bb087b9d9ec19ab0'
+                        deleted: true
                         key: {
                             role: {
                                 id: '254aeb7e4b8c41248cd58219f2a850a8'
@@ -1613,6 +1694,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '92fdaed84b0241fc90d754decd3ad9de'
+                        deleted: true
                         key: {
                             sys_security_acl: 'f484328ebd8241c8bab6025c3415539b'
                             sys_user_role: {
@@ -1635,10 +1717,28 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '95f27e2482064699b88b69c5430095e9'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: 'b27b2b29ff6033008d3f5d9ad53bf164'
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: '9681d48a90544dc295e5e2b789b18e9f'
+                        key: {
+                            role: {
+                                id: '254aeb7e4b8c41248cd58219f2a850a8'
+                                key: {
+                                    name: 'global.hr_mtg_admin'
+                                }
+                            }
+                            contains: {
+                                id: '31aa394bfee44b1696e110767a2d02b2'
+                                key: {
+                                    name: 'sn_hr_sp.hrsp_employee'
+                                }
+                            }
                         }
                     },
                     {
@@ -1666,7 +1766,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: '9d35432e59334b05a9a472595519c8ab'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: 'ff06ab840f20101091d0f00c97767e6d'
@@ -1692,6 +1792,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: '9f5b4698b10040e3b4d9d152f397d811'
+                        deleted: true
                         key: {
                             sys_security_acl: '64cf7310741b42499ff1a8a24dc47e20'
                             sys_user_role: {
@@ -1717,6 +1818,24 @@ declare global {
                             }
                             element: '.end_split'
                             position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: 'a153d116f6e94965a5488764f8b9ac57'
+                        key: {
+                            role: {
+                                id: '254aeb7e4b8c41248cd58219f2a850a8'
+                                key: {
+                                    name: 'global.hr_mtg_admin'
+                                }
+                            }
+                            contains: {
+                                id: '036fef84000941de8a6aa1bbfc36c23e'
+                                key: {
+                                    name: 'sn_hr_core.basic'
+                                }
+                            }
                         }
                     },
                     {
@@ -1755,6 +1874,19 @@ declare global {
                                 id: '254aeb7e4b8c41248cd58219f2a850a8'
                                 key: {
                                     name: 'global.hr_mtg_admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a777f2b09c8a4b10924a60283265f0d4'
+                        key: {
+                            sys_security_acl: '47dfbcd04aa84f359b28f21879d8cb14'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
                                 }
                             }
                         }
@@ -1812,6 +1944,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'abeb47ea073a483f9a2d49620e527d77'
+                        deleted: true
                         key: {
                             sys_security_acl: '0600fc4d59394fad917c91d463d7530c'
                             sys_user_role: {
@@ -1853,7 +1986,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'ae583d56c6d34fbc9cff3be43072659c'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: '98c44875ffa033008d3f5d9ad53bf1fa'
@@ -1862,7 +1995,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'af9a332c296a42b9a73ea53ef29ea18a'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: '1778a7480f20101091d0f00c97767e03'
@@ -1871,7 +2004,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'b19873af84cc46d4b2b55eb1aec0512f'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: 'ff06ab840f20101091d0f00c97767e6d'
@@ -1888,7 +2021,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'b1db991bb3df48beb91a38794ee975bb'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'aecc445621a04617b41abc2fe09f03b0'
                             variable: '989d9e235324220002c6435723dc3484'
@@ -1908,6 +2041,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'b3db37400d7f4530997b6973cb5d8e48'
+                        deleted: true
                         key: {
                             sys_security_acl: '6160342a3a8a41dd94019fffb269df30'
                             sys_user_role: {
@@ -1921,6 +2055,7 @@ declare global {
                     {
                         table: 'sys_ui_list_element'
                         id: 'b7641a4cc3d6c7500deb9e377d013153'
+                        deleted: true
                         key: {
                             list_id: {
                                 id: '7b641a4cc3d6c7500deb9e377d013152'
@@ -2015,6 +2150,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'c1c1e2928ee7470ea852bc83f8edd59b'
+                        deleted: true
                         key: {
                             sys_security_acl: '8ba1122abedc4acaa04413d54002fc7b'
                             sys_user_role: {
@@ -2028,7 +2164,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'c2707202d6fd4e48962efae7708d26e3'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '40524751139342bbaec3b9ef93f0dda2'
                             variable: 'e6e3c7535320220002c6435723dc3496'
@@ -2037,6 +2173,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'c2819ad008f64eddae1c63f2d12041ba'
+                        deleted: true
                         key: {
                             sys_security_acl: '0600fc4d59394fad917c91d463d7530c'
                             sys_user_role: {
@@ -2068,7 +2205,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'c4ebd69c4c6e48e0899cbb9d947033db'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '7d812babf8114834909fb06e29680cb7'
                             variable: 'e216835dffdf3210f972ffffffffff53'
@@ -2088,7 +2225,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: 'c636eb8229be4bd3b9b3a64c3e50b68a'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_41de4a935332120028bc29cac2dc349a'
@@ -2098,6 +2235,7 @@ declare global {
                     {
                         table: 'sys_user_role'
                         id: 'c6d80d0f63f64f84b3d7575d9b0c497d'
+                        deleted: true
                         key: {
                             name: 'global.hr_mtg_employee'
                         }
@@ -2105,7 +2243,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'c7848c0dbe3f45339dedad52a5e0a1ec'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: '1985e0ceff2433008d3f5d9ad53bf1ba'
@@ -2125,7 +2263,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'ca67e377c4824625b56aecddfaf30377'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '6f69fc4aff6433008d3f5d9ad53bf18c'
@@ -2133,13 +2271,40 @@ declare global {
                     },
                     {
                         table: 'sys_security_acl_role'
+                        id: 'cb6b98eba1694fe9a29c1599913f6798'
+                        key: {
+                            sys_security_acl: '0600fc4d59394fad917c91d463d7530c'
+                            sys_user_role: {
+                                id: '68c4418ec5094c23a892337d0233fa5a'
+                                key: {
+                                    name: 'sn_hr_sp.hrsp_employee'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
                         id: 'cc2860bfdc0d49b3a00dd0b9f90de029'
+                        deleted: true
                         key: {
                             sys_security_acl: '9ac8ada782594656977cd2d32551dc1f'
                             sys_user_role: {
                                 id: '0479da82eae74e718c8f80efb017da67'
                                 key: {
                                     name: 'global.hr_mtg_agent'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'cd875b8641f047bbb1c166c3f4f36ac9'
+                        key: {
+                            sys_security_acl: '9ac8ada782594656977cd2d32551dc1f'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
                                 }
                             }
                         }
@@ -2169,7 +2334,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'cfaebb3282b649278282423cab916c90'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '1985e0ceff2433008d3f5d9ad53bf1ba'
@@ -2312,6 +2477,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'e13bde87455e4373a842ca45b77bacaf'
+                        deleted: true
                         key: {
                             sys_security_acl: '87f6e6f367c243e28308690820566c26'
                             sys_user_role: {
@@ -2325,7 +2491,7 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: 'e22fc98779884efb83551f6be653af36'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'script'
                             table: 'var__m_atf_input_variable_bfb48f59ffdf3210f972ffffffffffb3'
@@ -2335,7 +2501,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'e322414a30a9439a8165cadf67d87317'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '9bb83f1fd19f4f25aa956507091e8e10'
                             variable: '1778a7480f20101091d0f00c97767e03'
@@ -2367,6 +2533,7 @@ declare global {
                     {
                         table: 'sys_user_role_contains'
                         id: 'ed003c218f6f486eb1b152d1a1fb3c33'
+                        deleted: true
                         key: {
                             role: {
                                 id: '0479da82eae74e718c8f80efb017da67'
@@ -2394,6 +2561,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'ef9560c8d855468798268ce4cf83c963'
+                        deleted: true
                         key: {
                             sys_security_acl: '8ba1122abedc4acaa04413d54002fc7b'
                             sys_user_role: {
@@ -2424,6 +2592,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'f1e7bca6cfeb4c41b885b025eb5934ce'
+                        deleted: true
                         key: {
                             sys_security_acl: '6160342a3a8a41dd94019fffb269df30'
                             sys_user_role: {
@@ -2475,7 +2644,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'f5d1a07cc3844f74be89c0b9fa1e755e'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'aecc445621a04617b41abc2fe09f03b0'
                             variable: '42f2564b73031300440211d8faf6a777'
@@ -2484,7 +2653,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'f6c5b6297fa348ae9d5715eee69b0d88'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '2c78554eab374104ad6ee2c6ea5725bd'
                             variable: 'e6e3c7535320220002c6435723dc3496'
@@ -2493,7 +2662,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'f81afd04859d42aaa9826cc75b983202'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: 'b0e90afc3a5341bdb3707024f199a0e0'
                             variable: '42f2564b73031300440211d8faf6a777'
@@ -2502,6 +2671,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'f8b99fb5d9e04887bec9c99db17d26b6'
+                        deleted: true
                         key: {
                             sys_security_acl: '47dfbcd04aa84f359b28f21879d8cb14'
                             sys_user_role: {
@@ -2530,7 +2700,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'f91397a08bb34195bb2ec04d6e50f615'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '27b1c04bdb174c80957ef0f805f2594a'
                             variable: '6f69fc4aff6433008d3f5d9ad53bf18c'
@@ -2539,6 +2709,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'f92f6f5cf75e457ea28872d835110049'
+                        deleted: true
                         key: {
                             sys_security_acl: '6160342a3a8a41dd94019fffb269df30'
                             sys_user_role: {
@@ -2552,6 +2723,7 @@ declare global {
                     {
                         table: 'sys_security_acl_role'
                         id: 'fadeb4c97ace49d187a3b716cb8d3570'
+                        deleted: true
                         key: {
                             sys_security_acl: '963fc4444536490a8bfb74c23c3d8e37'
                             sys_user_role: {
@@ -2578,11 +2750,24 @@ declare global {
                     {
                         table: 'sys_element_mapping'
                         id: 'fb8191fce3bd4c7b8129014f75d5878a'
-                        deleted: true
+                        deleted: false
                         key: {
                             field: 'field_values'
                             table: 'var__m_atf_input_variable_14872288df60220062fe6c7a4df26319'
                             id: '2c78554eab374104ad6ee2c6ea5725bd'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fc1bace22b594cc8a5606ea9c314f9e9'
+                        key: {
+                            sys_security_acl: '963fc4444536490a8bfb74c23c3d8e37'
+                            sys_user_role: {
+                                id: '99932048f66344daaa83ed87389a11fa'
+                                key: {
+                                    name: 'sn_hr_core.basic'
+                                }
+                            }
                         }
                     },
                     {
@@ -2620,7 +2805,7 @@ declare global {
                     {
                         table: 'sys_variable_value'
                         id: 'ff5860e751394775968bb0d96d7b451b'
-                        deleted: true
+                        deleted: false
                         key: {
                             document_key: '4697d5ab704241ca8832412d4ff7d521'
                             variable: '989d9e235324220002c6435723dc3484'

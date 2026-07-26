@@ -13,7 +13,11 @@ const DEFAULT_MEETING_TYPE = 'in_person'
 
 const EXCLUDED_CASE_STATE_KEYWORDS = ['cancel', 'closed', 'resolved']
 
-const AGENT_ROLES = ['global.hr_mtg_agent', 'global.hr_mtg_admin']
+// Standard HRSD roles instead of app-specific ones: sn_hr_core.basic is the minimum role for
+// HR agents (out of the box, grants read/write on all HR cases), and sn_hr_sp.hrsp_employee is
+// the role ServiceNow itself uses to gate Employee Center access -- both are sufficient on
+// their own, no app role required. global.hr_mtg_admin remains for admin-only actions.
+const AGENT_ROLES = ['sn_hr_core.basic', 'global.hr_mtg_admin']
 const EMPLOYEE_ROLES = ['sn_hr_sp.hrsp_employee']
 
 /** Maps cmn_schedule_span repeat_type values to corresponding day-of-week names. */
@@ -152,10 +156,12 @@ function getScheduleWindows(scheduleSysId: string): { dayOfWeek: string; start: 
         // Determine which days this span applies to
         const days = REPEAT_TYPE_DAYS[repeatType]
         if (days) {
-            // Standard repeat types: map to known day sets
-            for (const day of days) {
+            // Standard repeat types: map to known day sets.
+            // No for-of: ServiceNow's server-side engine doesn't implement the iterator
+            // protocol on Array, so for-of over a plain array throws at evaluation time.
+            days.forEach((day) => {
                 windows.push({ dayOfWeek: day, start: startTime, end: endTime })
-            }
+            })
         } else if (repeatType === 'weekly') {
             // Weekly repeat: uses days_of_week field (concatenated digits 1=Mon..7=Sun)
             const daysOfWeek = spanGr.getValue('days_of_week') || ''
@@ -178,7 +184,10 @@ function buildAgendaDays(agentId: string): DaySlots[] {
     const rangeStart = formatDate(today)
     const rangeEnd = formatDate(addDays(today, AGENDA_WINDOW_DAYS - 1))
 
-    const bookedKeys = new Set<string>()
+    // Plain object used as a string set, not `new Set()`: Map/Set/WeakMap are not supported by
+    // ServiceNow's server-side script engine (their prototypes are locked), even where other
+    // ES6+ syntax (arrow functions, let/const, template literals) is fine.
+    const bookedKeys: Record<string, boolean> = {}
     const bookedGr = new GlideRecord(APPOINTMENT_TABLE)
     bookedGr.addQuery('hr_agent', agentId)
     bookedGr.addQuery('status', 'booked')
@@ -186,11 +195,12 @@ function buildAgendaDays(agentId: string): DaySlots[] {
     bookedGr.addQuery('date', '<=', rangeEnd)
     bookedGr.query()
     while (bookedGr.next()) {
-        bookedKeys.add(slotKey(bookedGr.getValue('date'), bookedGr.getValue('start_time'), bookedGr.getValue('end_time')))
+        bookedKeys[slotKey(bookedGr.getValue('date'), bookedGr.getValue('start_time'), bookedGr.getValue('end_time'))] = true
     }
 
     const recurringWindows: { dayOfWeek: string; start: string; end: string }[] = []
-    const oneOffWindows = new Map<string, TimeSlot[]>()
+    // Plain object keyed by date instead of `new Map()` -- same reason as bookedKeys above.
+    const oneOffWindows: Record<string, TimeSlot[]> = {}
 
     const availGr = new GlideRecord(AVAILABILITY_TABLE)
     availGr.addQuery('agent', agentId)
@@ -208,9 +218,9 @@ function buildAgendaDays(agentId: string): DaySlots[] {
         } else {
             const date = availGr.getValue('date')
             if (!date) continue
-            const list = oneOffWindows.get(date) || []
+            const list = oneOffWindows[date] || []
             list.push({ start, end })
-            oneOffWindows.set(date, list)
+            oneOffWindows[date] = list
         }
     }
 
@@ -219,9 +229,10 @@ function buildAgendaDays(agentId: string): DaySlots[] {
         const scheduleSysId = getDefaultScheduleSysId()
         if (scheduleSysId) {
             const scheduleWindows = getScheduleWindows(scheduleSysId)
-            for (const w of scheduleWindows) {
+            // No for-of here either -- see note above.
+            scheduleWindows.forEach((w) => {
                 recurringWindows.push(w)
-            }
+            })
         }
     }
 
@@ -234,19 +245,22 @@ function buildAgendaDays(agentId: string): DaySlots[] {
         const windows: TimeSlot[] = recurringWindows
             .filter((w) => w.dayOfWeek === dow)
             .map((w) => ({ start: w.start, end: w.end }))
-            .concat(oneOffWindows.get(dateStr) || [])
+            .concat(oneOffWindows[dateStr] || [])
 
-        const slotMap = new Map<string, DaySlot>()
+        // Plain object keyed by slot key instead of `new Map()` -- same reason as above.
+        const slotMap: Record<string, DaySlot> = {}
+        const slotOrder: string[] = []
         windows.forEach((window) => {
             buildSlotsForWindow(window.start, window.end, SLOT_DURATION_MINUTES).forEach((slot) => {
                 const key = slotKey(dateStr, slot.start, slot.end)
-                if (!slotMap.has(key)) {
-                    slotMap.set(key, { start: slot.start, end: slot.end, available: !bookedKeys.has(key) })
+                if (!slotMap[key]) {
+                    slotMap[key] = { start: slot.start, end: slot.end, available: !bookedKeys[key] }
+                    slotOrder.push(key)
                 }
             })
         })
 
-        const slots = Array.from(slotMap.values()).sort((a, b) => (a.start < b.start ? -1 : 1))
+        const slots = slotOrder.map((key) => slotMap[key]).sort((a, b) => (a.start < b.start ? -1 : 1))
         days.push({ date: dateStr, hasAvailability: slots.some((s) => s.available), slots })
     }
 

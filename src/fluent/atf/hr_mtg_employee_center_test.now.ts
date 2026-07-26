@@ -45,7 +45,7 @@ export const hrMtgEmployeeCenterTest = Test(
             },
         })
 
-        // Grants the hr_mtg_agent role, then seeds the same deterministic every-weekday
+        // Grants the sn_hr_core.basic role, then seeds the same deterministic every-weekday
         // availability as the API test so the 90-day grid always has a pickable day/slot.
         atf.server.runServerSideScript({
             $id: Now.ID['atf-ec-seed-availability'],
@@ -53,7 +53,7 @@ export const hrMtgEmployeeCenterTest = Test(
             script: `
                 (function (outputs, steps, params, stepResult, assertEqual) {
                     var roleGr = new GlideRecord('sys_user_role')
-                    roleGr.addQuery('name', 'global.hr_mtg_agent')
+                    roleGr.addQuery('name', 'sn_hr_core.basic')
                     roleGr.query()
                     if (roleGr.next()) {
                         var hasRole = new GlideRecord('sys_user_has_role')
@@ -75,7 +75,7 @@ export const hrMtgEmployeeCenterTest = Test(
                         avail.setValue('active', true)
                         avail.insert()
                     })
-                    stepResult.setOutputMessage('Granted hr_mtg_agent role and seeded an 08:00-17:00 window for every weekday')
+                    stepResult.setOutputMessage('Granted sn_hr_core.basic role and seeded an 08:00-17:00 window for every weekday')
                 })(outputs, steps, params, stepResult, assertEqual)
             `,
         })

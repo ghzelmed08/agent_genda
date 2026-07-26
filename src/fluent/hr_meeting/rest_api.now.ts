@@ -1,13 +1,15 @@
 import { RestApi, Acl } from '@servicenow/sdk/core'
 import { getAgenda, bookSlot } from '../../server/hr_meeting/restHandlers'
 
-// Allow any authenticated user to reach the endpoint. The REST handlers enforce finer-grained
-// per-case authorization server-side (canAccessCase checks opened_for/caller_id or agent/admin role).
+// Gate the endpoint to HR-context users via standard ServiceNow HRSD roles (basic HR agent,
+// Employee Center employee) or the app's own admin role -- not "any logged in user". The REST
+// handlers still enforce finer-grained per-case authorization server-side (canAccessCase checks
+// opened_for/caller_id or agent/admin role).
 const hrMtgSchedulerAccess = Acl({
     $id: Now.ID['hr-mtg-scheduler-acl'],
     type: 'rest_endpoint',
     name: 'hr_mtg_scheduler_access',
-    script: `answer = gs.isLoggedIn()`,
+    script: `answer = gs.hasRole('sn_hr_core.basic') || gs.hasRole('sn_hr_sp.hrsp_employee') || gs.hasRole('global.hr_mtg_admin')`,
     operation: 'execute',
 })
 

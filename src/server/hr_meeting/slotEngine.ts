@@ -26,7 +26,12 @@ export function dayOfWeekName(date: Date): string {
 }
 
 export function timeToMinutes(time: string): number {
-    const [h, m] = time.split(':').map(Number)
+    // No array destructuring: ServiceNow's server-side script engine rejects it at evaluation
+    // time ("destructuring assignment is an ECMAScript 6 feature - not supported"), even though
+    // arrow functions/let/const/template literals are fine.
+    const parts = time.split(':').map(Number)
+    const h = parts[0]
+    const m = parts[1]
     return h * 60 + m
 }
 

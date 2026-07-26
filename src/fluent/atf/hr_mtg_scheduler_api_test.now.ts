@@ -46,7 +46,7 @@ export const hrMtgSchedulerApiTest = Test(
             },
         })
 
-        // Grants the hr_mtg_agent role to the ATF agent user, then seeds a recurring 08:00-17:00
+        // Grants the sn_hr_core.basic role to the ATF agent user, then seeds a recurring 08:00-17:00
         // window on every weekday so the 90-day grid always has an available slot for "today",
         // whatever day this test happens to run on.
         atf.server.runServerSideScript({
@@ -55,7 +55,7 @@ export const hrMtgSchedulerApiTest = Test(
             script: `
                 (function (outputs, steps, params, stepResult, assertEqual) {
                     var roleGr = new GlideRecord('sys_user_role')
-                    roleGr.addQuery('name', 'global.hr_mtg_agent')
+                    roleGr.addQuery('name', 'sn_hr_core.basic')
                     roleGr.query()
                     if (roleGr.next()) {
                         var hasRole = new GlideRecord('sys_user_has_role')
@@ -77,7 +77,7 @@ export const hrMtgSchedulerApiTest = Test(
                         avail.setValue('active', true)
                         avail.insert()
                     })
-                    stepResult.setOutputMessage('Granted hr_mtg_agent role and seeded an 08:00-17:00 window for every weekday')
+                    stepResult.setOutputMessage('Granted sn_hr_core.basic role and seeded an 08:00-17:00 window for every weekday')
                 })(outputs, steps, params, stepResult, assertEqual)
             `,
         })
