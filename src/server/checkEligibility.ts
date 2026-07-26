@@ -4,9 +4,8 @@ import { gs, GlideRecord } from "@servicenow/glide";
  * Eligibility gate: verifies the employee has an active HR case
  * with the specified agent before allowing an appointment to be created.
  *
- * Default export -- see the comment in server/preventDoubleBooking.ts for why.
  */
-export default function checkEligibility(current: any) {
+export function checkEligibility(current: any) {
   var employee = current.getValue("employee");
   var hrCase = current.getValue("hr_case");
   var agent = current.getValue("hr_agent");

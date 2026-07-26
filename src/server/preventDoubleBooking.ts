@@ -3,13 +3,8 @@ import { gs, GlideRecord } from "@servicenow/glide";
 /**
  * Prevents double-booking: ensures no other non-cancelled appointment exists
  * for the same agent on the same date with overlapping time.
- *
- * Default export, not named: see the comment in server/hr_meeting/getAgenda.ts -- the Fluent
- * SDK generates a destructured require() wrapper for a named export used as a business rule's
- * `script:`, and that destructuring isn't supported by ServiceNow's script engine. A default
- * export avoids it.
  */
-export default function preventDoubleBooking(current: any) {
+export function preventDoubleBooking(current: any) {
   var agent = current.getValue("hr_agent");
   var date = current.getValue("date");
   var startTime = current.getValue("start_time");

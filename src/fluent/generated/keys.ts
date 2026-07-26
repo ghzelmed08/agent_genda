@@ -253,21 +253,40 @@ declare global {
                         id: '3c5999f32c054f7d97ece16ededb69e0'
                         deleted: true
                     }
+                    'src_server_check-eligibility_entry_js': {
+                        table: 'sys_module'
+                        id: '34dfc18515fb4f79b2f5828d3879a09c'
+                        deleted: true
+                    }
                     src_server_checkEligibility_ts: {
                         table: 'sys_module'
                         id: '57e50dbf8d1f40a9b2d1d47a998a9f65'
+                        deleted: false
                     }
                     src_server_hr_meeting_agendaService_ts: {
                         table: 'sys_module'
                         id: 'abd5d45f837441d192080d4f04e2220e'
+                        deleted: false
                     }
                     src_server_hr_meeting_bookSlot_ts: {
                         table: 'sys_module'
                         id: '23198ebe0480408881bed218d63aed96'
+                        deleted: false
                     }
                     src_server_hr_meeting_getAgenda_ts: {
                         table: 'sys_module'
                         id: '4627a945885542e59fd3919785dc2e63'
+                        deleted: false
+                    }
+                    'src_server_hr_meeting_rest_book-slot_entry_js': {
+                        table: 'sys_module'
+                        id: '733db6faa8d849ab93463fac3547dae9'
+                        deleted: true
+                    }
+                    'src_server_hr_meeting_rest_get-agenda_entry_js': {
+                        table: 'sys_module'
+                        id: '465b88b332194e739da94ae4e5d2d5c9'
+                        deleted: true
                     }
                     src_server_hr_meeting_restHandlers_ts: {
                         table: 'sys_module'
@@ -277,6 +296,7 @@ declare global {
                     src_server_hr_meeting_restStatus_ts: {
                         table: 'sys_module'
                         id: 'e843c0f93168435286333a6eb5a70ebb'
+                        deleted: false
                     }
                     'src_server_hr_meeting_scheduled-scripts_hr-mtg-agenda-tab-daily_js': {
                         table: 'sys_module'
@@ -297,6 +317,7 @@ declare global {
                     src_server_hr_meeting_slotEngine_ts: {
                         table: 'sys_module'
                         id: '9fde810e290643be94ba81edef60b046'
+                        deleted: false
                     }
                     'src_server_hr_meeting_sp_widget_agenda-widget_client_js': {
                         table: 'sys_module'
@@ -309,14 +330,27 @@ declare global {
                     src_server_hr_meeting_tables_ts: {
                         table: 'sys_module'
                         id: '27b2c2e503364b869b7af2d7af76ab4f'
+                        deleted: false
+                    }
+                    'src_server_prevent-double-booking_entry_js': {
+                        table: 'sys_module'
+                        id: 'f05a59c3aa384d1a88f6bbe5bdc145de'
+                        deleted: true
                     }
                     src_server_preventDoubleBooking_ts: {
                         table: 'sys_module'
                         id: '0bb800bd1c9c43f9bd9a22fb3e0c4fe8'
+                        deleted: false
                     }
                     src_server_script_ts: {
                         table: 'sys_module'
                         id: '8cd533e86b7d43fa8724bba3e61f7dfb'
+                        deleted: false
+                    }
+                    'src_server_show-state-update_entry_js': {
+                        table: 'sys_module'
+                        id: 'd769f8f7539e4260b9c74866a05e0ba6'
+                        deleted: true
                     }
                 }
                 composite: [

@@ -1,7 +1,7 @@
 import "@servicenow/sdk/global";
 import { BusinessRule } from "@servicenow/sdk/core";
-import preventDoubleBooking from "../../server/preventDoubleBooking";
-import checkEligibility from "../../server/checkEligibility";
+import { preventDoubleBooking } from "../../server/preventDoubleBooking";
+import { checkEligibility } from "../../server/checkEligibility";
 
 // Prevent double-booking: abort if the agent already has an appointment at that time
 BusinessRule({

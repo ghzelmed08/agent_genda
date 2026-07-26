@@ -1,5 +1,5 @@
 import { BusinessRule, ClientScript } from '@servicenow/sdk/core'
-import showStateUpdate from '../server/script'
+import { showStateUpdate } from '../server/script'
 
 // creates a client script that pops up 'Table loaded successfully!!' message every time todo record is loaded
 ClientScript({
