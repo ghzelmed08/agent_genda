@@ -1,6 +1,4 @@
 import { RestApi, Acl } from '@servicenow/sdk/core'
-import { getAgenda } from '../../server/hr_meeting/getAgenda'
-import { bookSlot } from '../../server/hr_meeting/bookSlot'
 
 // Gate the endpoint to HR-context users via standard ServiceNow HRSD roles (basic HR agent,
 // Employee Center employee) or the app's own admin role -- not "any logged in user". The REST
@@ -27,7 +25,7 @@ RestApi({
             name: 'getAgenda',
             method: 'GET',
             path: '/cases/{table}/{case_id}/agenda',
-            script: getAgenda,
+            script: Now.include('../../server/hr_meeting/get-agenda.server.js'),
             internalRole: false,
             shortDescription:
                 '90-day availability grid + any active appointment for the case. {table} must be sn_hr_core_case or a table that extends it.',
@@ -37,7 +35,7 @@ RestApi({
             name: 'bookSlot',
             method: 'POST',
             path: '/cases/{table}/{case_id}/book',
-            script: bookSlot,
+            script: Now.include('../../server/hr_meeting/book-slot.server.js'),
             internalRole: false,
             shortDescription: 'Book a slot for the case, cancelling any previous active appointment',
         },

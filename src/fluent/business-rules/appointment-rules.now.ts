@@ -1,7 +1,5 @@
 import "@servicenow/sdk/global";
 import { BusinessRule } from "@servicenow/sdk/core";
-import { preventDoubleBooking } from "../../server/preventDoubleBooking";
-import { checkEligibility } from "../../server/checkEligibility";
 
 // Prevent double-booking: abort if the agent already has an appointment at that time
 BusinessRule({
@@ -14,7 +12,7 @@ BusinessRule({
   active: true,
   description:
     "Prevents creating an appointment if the HR agent already has a non-cancelled appointment at the same date/time.",
-  script: preventDoubleBooking,
+  script: Now.include("../../server/prevent-double-booking.server.js"),
 });
 
 // Eligibility check: abort if employee has no active case with the agent
@@ -28,5 +26,5 @@ BusinessRule({
   active: true,
   description:
     "Verifies the employee has an active HR case assigned to the selected agent before allowing appointment creation.",
-  script: checkEligibility,
+  script: Now.include("../../server/check-eligibility.server.js"),
 });

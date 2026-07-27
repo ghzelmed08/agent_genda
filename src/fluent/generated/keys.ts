@@ -322,25 +322,37 @@ declare global {
                         id: '34dfc18515fb4f79b2f5828d3879a09c'
                         deleted: true
                     }
+                    'src_server_check-eligibility_server_js': {
+                        table: 'sys_module'
+                        id: '36af2eb2f8ca4a03a364951460b665c9'
+                    }
                     src_server_checkEligibility_ts: {
                         table: 'sys_module'
                         id: '57e50dbf8d1f40a9b2d1d47a998a9f65'
-                        deleted: false
+                        deleted: true
                     }
                     src_server_hr_meeting_agendaService_ts: {
                         table: 'sys_module'
                         id: 'abd5d45f837441d192080d4f04e2220e'
-                        deleted: false
+                        deleted: true
+                    }
+                    'src_server_hr_meeting_book-slot_server_js': {
+                        table: 'sys_module'
+                        id: 'fa4a0216ceb744aab9375b364aa723aa'
                     }
                     src_server_hr_meeting_bookSlot_ts: {
                         table: 'sys_module'
                         id: '23198ebe0480408881bed218d63aed96'
-                        deleted: false
+                        deleted: true
+                    }
+                    'src_server_hr_meeting_get-agenda_server_js': {
+                        table: 'sys_module'
+                        id: '6ccdf3561a5e43abaeb220001efc97b7'
                     }
                     src_server_hr_meeting_getAgenda_ts: {
                         table: 'sys_module'
                         id: '4627a945885542e59fd3919785dc2e63'
-                        deleted: false
+                        deleted: true
                     }
                     'src_server_hr_meeting_rest_book-slot_entry_js': {
                         table: 'sys_module'
@@ -360,7 +372,7 @@ declare global {
                     src_server_hr_meeting_restStatus_ts: {
                         table: 'sys_module'
                         id: 'e843c0f93168435286333a6eb5a70ebb'
-                        deleted: false
+                        deleted: true
                     }
                     'src_server_hr_meeting_scheduled-scripts_hr-mtg-agenda-tab-daily_js': {
                         table: 'sys_module'
@@ -381,7 +393,7 @@ declare global {
                     src_server_hr_meeting_slotEngine_ts: {
                         table: 'sys_module'
                         id: '9fde810e290643be94ba81edef60b046'
-                        deleted: false
+                        deleted: true
                     }
                     'src_server_hr_meeting_sp_widget_agenda-widget_client_js': {
                         table: 'sys_module'
@@ -394,27 +406,35 @@ declare global {
                     src_server_hr_meeting_tables_ts: {
                         table: 'sys_module'
                         id: '27b2c2e503364b869b7af2d7af76ab4f'
-                        deleted: false
+                        deleted: true
                     }
                     'src_server_prevent-double-booking_entry_js': {
                         table: 'sys_module'
                         id: 'f05a59c3aa384d1a88f6bbe5bdc145de'
                         deleted: true
                     }
+                    'src_server_prevent-double-booking_server_js': {
+                        table: 'sys_module'
+                        id: '898a821c936e4ccf80c0a7c2872d13f5'
+                    }
                     src_server_preventDoubleBooking_ts: {
                         table: 'sys_module'
                         id: '0bb800bd1c9c43f9bd9a22fb3e0c4fe8'
-                        deleted: false
+                        deleted: true
                     }
                     src_server_script_ts: {
                         table: 'sys_module'
                         id: '8cd533e86b7d43fa8724bba3e61f7dfb'
-                        deleted: false
+                        deleted: true
                     }
                     'src_server_show-state-update_entry_js': {
                         table: 'sys_module'
                         id: 'd769f8f7539e4260b9c74866a05e0ba6'
                         deleted: true
+                    }
+                    'src_server_show-state-update_server_js': {
+                        table: 'sys_module'
+                        id: 'd662b003e7da486ebdadf857f4b82d0a'
                     }
                 }
                 composite: [
