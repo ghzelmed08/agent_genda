@@ -1,5 +1,5 @@
 import "@servicenow/sdk/global";
-import { Form, default_view } from "@servicenow/sdk/core";
+import { Form, default_view, ClientScript } from "@servicenow/sdk/core";
 
 // Default form view for Availability table
 Form({
@@ -64,4 +64,47 @@ Form({
       ],
     },
   ],
+});
+
+// Default form view for the Configuration (singleton) table
+Form({
+  table: "u_hr_mtg_config",
+  view: default_view,
+  sections: [
+    {
+      caption: "Default Availability Schedule",
+      content: [
+        {
+          layout: "one-column",
+          elements: [
+            { field: "default_schedule", type: "table_field" },
+            { field: "default_schedule_span", type: "table_field" },
+            { field: "availability_source", type: "table_field" },
+          ],
+        },
+      ],
+    },
+  ],
+});
+
+// Clears the previously-selected span whenever the schedule changes, since a span from the
+// old schedule would otherwise remain selected (and fail the default_schedule_span reference
+// qualifier, which requires schedule = the currently selected default_schedule).
+ClientScript({
+  $id: Now.ID["cs_config_clear_span_on_schedule_change"],
+  name: "Clear Default Schedule Span on Schedule Change",
+  table: "u_hr_mtg_config",
+  type: "onChange",
+  field: "default_schedule",
+  uiType: "all",
+  active: true,
+  isolateScript: false,
+  appliesExtended: false,
+  description: "Clears default_schedule_span whenever default_schedule changes, since it would otherwise still reference a span from the previous schedule.",
+  script: `function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+        if (isLoading || newValue === oldValue) {
+            return;
+        }
+        g_form.setValue('default_schedule_span', '');
+    }`,
 });

@@ -77,7 +77,7 @@
     var CONFIG_TABLE = 'u_hr_mtg_config'
     var SCHEDULE_SPAN_TABLE = 'cmn_schedule_span'
 
-    var SLOT_DURATION_MINUTES = 30
+    var SLOT_DURATION_MINUTES = parseInt(gs.getProperty('u_hr_mtg.slot_duration_minutes', '30'), 10) || 30
     var AGENDA_WINDOW_DAYS = 90
 
     var EXCLUDED_CASE_STATE_KEYWORDS = ['cancel', 'closed', 'resolved']
@@ -152,43 +152,52 @@
         return parts.length > 1 ? parts[1] : dateTimeStr
     }
 
-    function getDefaultScheduleSysId() {
+    // Reads the single u_hr_mtg_config record's default_schedule_span (mandatory, and filtered
+    // on the form to schedule=default_schedule AND show_as=free) and expands it into recurring
+    // windows. availability_source is checked first: "outlook" is a reserved placeholder for a
+    // future integration and isn't implemented yet, so it currently yields no windows (safer
+    // than silently falling through to the schedule) rather than "schedule".
+    //
+    // The re-checks of show_as/schedule below are defensive: the reference qualifier on the
+    // form only constrains what a user can newly pick in the UI, it does not stop a script or
+    // direct API call from writing a non-conforming value, so this does not trust the stored
+    // reference blindly.
+    function getDefaultAvailabilityWindows() {
         var configGr = new GlideRecord(CONFIG_TABLE)
         configGr.setLimit(1)
         configGr.query()
-        if (!configGr.next()) return null
-        var scheduleSysId = configGr.getValue('default_schedule')
-        return scheduleSysId || null
-    }
+        if (!configGr.next()) return []
 
-    function getScheduleWindows(scheduleSysId) {
-        var windows = []
+        var source = configGr.getValue('availability_source') || 'schedule'
+        if (source !== 'schedule') return []
+
+        var spanId = configGr.getValue('default_schedule_span')
+        if (!spanId) return []
+        var scheduleId = configGr.getValue('default_schedule')
+
         var spanGr = new GlideRecord(SCHEDULE_SPAN_TABLE)
-        spanGr.addQuery('schedule', scheduleSysId)
-        spanGr.query()
+        if (!spanGr.get(spanId)) return []
+        if (spanGr.getValue('show_as') !== 'free') return []
+        if (scheduleId && spanGr.getValue('schedule') !== scheduleId) return []
 
-        while (spanGr.next()) {
-            var showAs = spanGr.getValue('show_as') || ''
-            if (showAs === 'busy') continue
+        var repeatType = spanGr.getValue('repeat_type') || ''
+        var startTime = extractTime(spanGr.getValue('start_date_time') || spanGr.getValue('start') || '')
+        var endTime = extractTime(spanGr.getValue('end_date_time') || spanGr.getValue('end') || '')
+        if (!startTime || !endTime) return []
 
-            var repeatType = spanGr.getValue('repeat_type') || ''
-            var startTime = extractTime(spanGr.getValue('start_date_time') || spanGr.getValue('start') || '')
-            var endTime = extractTime(spanGr.getValue('end_date_time') || spanGr.getValue('end') || '')
-            if (!startTime || !endTime) continue
-
-            var days = REPEAT_TYPE_DAYS[repeatType]
-            if (days) {
-                days.forEach(function (day) {
-                    windows.push({ dayOfWeek: day, start: startTime, end: endTime })
-                })
-            } else if (repeatType === 'weekly') {
-                var daysOfWeek = spanGr.getValue('days_of_week') || ''
-                var dayNames = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-                for (var i = 0; i < daysOfWeek.length; i++) {
-                    var digit = parseInt(daysOfWeek.charAt(i), 10)
-                    if (digit >= 1 && digit <= 7) {
-                        windows.push({ dayOfWeek: dayNames[digit - 1], start: startTime, end: endTime })
-                    }
+        var windows = []
+        var days = REPEAT_TYPE_DAYS[repeatType]
+        if (days) {
+            days.forEach(function (day) {
+                windows.push({ dayOfWeek: day, start: startTime, end: endTime })
+            })
+        } else if (repeatType === 'weekly') {
+            var daysOfWeek = spanGr.getValue('days_of_week') || ''
+            var dayNames = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+            for (var i = 0; i < daysOfWeek.length; i++) {
+                var digit = parseInt(daysOfWeek.charAt(i), 10)
+                if (digit >= 1 && digit <= 7) {
+                    windows.push({ dayOfWeek: dayNames[digit - 1], start: startTime, end: endTime })
                 }
             }
         }
@@ -237,12 +246,9 @@
         }
 
         if (!hasExplicitAvailability) {
-            var scheduleSysId = getDefaultScheduleSysId()
-            if (scheduleSysId) {
-                getScheduleWindows(scheduleSysId).forEach(function (w) {
-                    recurringWindows.push(w)
-                })
-            }
+            getDefaultAvailabilityWindows().forEach(function (w) {
+                recurringWindows.push(w)
+            })
         }
 
         var days = []

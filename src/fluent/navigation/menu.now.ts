@@ -78,18 +78,52 @@ Record({
   },
 });
 
-// Module: Administration (singleton configuration for default schedule)
+// Module: Administration -- a SEPARATOR (non-navigable header), not a real link. sys_app_module
+// has no parent/category field, so a bold section header followed by its "child" modules
+// (ordered right after it) is the standard ServiceNow way to visually group modules -- there is
+// no true nested-module mechanism in the classic Application Navigator.
 Record({
-  $id: Now.ID["module_admin_config"],
+  $id: Now.ID["module_admin_separator"],
   table: "sys_app_module",
   data: {
     title: "Administration",
     application: hrMeetingMenu,
-    link_type: "LIST",
-    name: "u_hr_mtg_config",
-    hint: "Manage application configuration including default availability schedule",
+    link_type: "SEPARATOR",
     roles: ["global.hr_mtg_admin"],
     active: true,
     order: 500,
+  },
+});
+
+// Module: Availability Schedule (singleton configuration for default schedule) -- under Administration
+Record({
+  $id: Now.ID["module_availability_schedule"],
+  table: "sys_app_module",
+  data: {
+    title: "Availability Schedule",
+    application: hrMeetingMenu,
+    link_type: "LIST",
+    name: "u_hr_mtg_config",
+    hint: "Manage the default fallback availability schedule used when an agent has no manual availability records",
+    roles: ["global.hr_mtg_admin"],
+    active: true,
+    order: 510,
+  },
+});
+
+// Module: Properties -- under Administration, links to the System Property Page defined in
+// administration/properties.now.ts
+Record({
+  $id: Now.ID["module_properties"],
+  table: "sys_app_module",
+  data: {
+    title: "Properties",
+    application: hrMeetingMenu,
+    link_type: "DIRECT",
+    query: "system_properties_ui.do?sysparm_title=HR Meeting Scheduler Properties&sysparm_category=HR Meeting Scheduler Properties",
+    hint: "Manage HR Meeting Scheduler system properties",
+    roles: ["global.hr_mtg_admin"],
+    active: true,
+    order: 520,
   },
 });

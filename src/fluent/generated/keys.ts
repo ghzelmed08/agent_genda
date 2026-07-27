@@ -176,6 +176,10 @@ declare global {
                         table: 'sys_script'
                         id: 'f0a2afc7e8f345f3869e4aaf5dc2a55e'
                     }
+                    cs_config_clear_span_on_schedule_change: {
+                        table: 'sys_script_client'
+                        id: '0885311cc16d4a829f5e701356efcba5'
+                    }
                     cs0: {
                         table: 'sys_script_client'
                         id: 'b91ae8836b7a4371972bc008dad0b1fc'
@@ -191,6 +195,14 @@ declare global {
                     hr_meeting_menu: {
                         table: 'sys_app_application'
                         id: '52907846744b4a6196549119f18b17de'
+                    }
+                    hr_mtg_properties_category: {
+                        table: 'sys_properties_category'
+                        id: 'f4702325ab664fd1a956a0d75429d0b7'
+                    }
+                    hr_mtg_properties_category_m2m_slot_duration: {
+                        table: 'sys_properties_category_m2m'
+                        id: '7ab3f9e4c0e843fca3ff53435c425587'
                     }
                     'hr-mtg-agenda-book': {
                         table: 'sys_ws_operation'
@@ -231,10 +243,19 @@ declare global {
                     module_admin_config: {
                         table: 'sys_app_module'
                         id: 'dc54bcf635714ec19eecc33ac7b24c24'
+                        deleted: true
+                    }
+                    module_admin_separator: {
+                        table: 'sys_app_module'
+                        id: 'eb40414385ea4c45b52a3a69494e57a7'
                     }
                     module_all_appointments: {
                         table: 'sys_app_module'
                         id: 'bbb25d8a812647b4bb0f72b9eedf6904'
+                    }
+                    module_availability_schedule: {
+                        table: 'sys_app_module'
+                        id: 'f9bfc573c1294612b18cc7b5bf5dd728'
                     }
                     module_book_meeting: {
                         table: 'sys_app_module'
@@ -247,6 +268,10 @@ declare global {
                     module_my_agenda: {
                         table: 'sys_app_module'
                         id: '310469d316aa4aa7ac61eb97bc574144'
+                    }
+                    module_properties: {
+                        table: 'sys_app_module'
+                        id: '79b100c762494426a8e8f8f78be0a6c3'
                     }
                     notify_agent_new_booking: {
                         table: 'sysevent_email_action'
@@ -311,6 +336,10 @@ declare global {
                     'probe-template-literal': {
                         table: 'sys_ws_operation'
                         id: 'bf3d843e010047d88081e386d3832f91'
+                    }
+                    prop_slot_duration_minutes: {
+                        table: 'sys_properties'
+                        id: 'c7f74851ad824224806b7f6c03c96fef'
                     }
                     src_server_appointmentRules_ts: {
                         table: 'sys_module'
@@ -782,6 +811,14 @@ declare global {
                         key: {
                             document_key: '5b171a95867a41348fb2e69e75ea7222'
                             variable: 'ff06ab840f20101091d0f00c97767e6d'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '21acb58c0d47454687231a86ff6e911e'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'default_schedule_span'
                         }
                     },
                     {
@@ -1864,6 +1901,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: '962214dbb1ee4eb98f02286026bd85ba'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_user_role_contains'
                         id: '9681d48a90544dc295e5e2b789b18e9f'
                         key: {
@@ -2168,6 +2219,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'b36c74122f3c45edb7c76b6584e7b8e5'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'default_schedule_span'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'b3c6557b65e74a3ea392fbe8e8cca745'
                         key: {
@@ -2288,6 +2348,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_choice'
+                        id: 'c18c324415c9451f92247572e0fc2982'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'availability_source'
+                            value: 'outlook'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'c1c1e2928ee7470ea852bc83f8edd59b'
                         deleted: true
@@ -2378,6 +2447,39 @@ declare global {
                         deleted: true
                         key: {
                             name: 'global.hr_mtg_employee'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'c6e62325258c44f38c4d673eee43d006'
+                        key: {
+                            sys_ui_form: {
+                                id: '962214dbb1ee4eb98f02286026bd85ba'
+                                key: {
+                                    name: 'u_hr_mtg_config'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'f809375bd38b4f1c87aaa72611acc45f'
+                                key: {
+                                    name: 'u_hr_mtg_config'
+                                    caption: 'Default Availability Schedule'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -2478,6 +2580,23 @@ declare global {
                         key: {
                             document_key: 'dd6b4e9328dd4cf099637268e47035b9'
                             variable: '1985e0ceff2433008d3f5d9ad53bf1ba'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'cfe697e8835f453ba560986bcc9d3ea6'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'availability_source'
+                            value: 'schedule'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd1f50a9c5a9145ff9ce81ce208fbb853'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'availability_source'
                         }
                     },
                     {
@@ -2585,6 +2704,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'dc116b9207e04732930e766228e60369'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f809375bd38b4f1c87aaa72611acc45f'
+                                key: {
+                                    name: 'u_hr_mtg_config'
+                                    caption: 'Default Availability Schedule'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'availability_source'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'ddf2d9ad5c01412f900e759891fe8511'
                         key: {
@@ -2636,6 +2777,28 @@ declare global {
                             field: 'script'
                             table: 'var__m_atf_input_variable_bfb48f59ffdf3210f972ffffffffffb3'
                             id: 'c4f30044cf164261aa5a520a446a76aa'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e2bf6dc7bb0442a0aaba9a2ba8b66e81'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f809375bd38b4f1c87aaa72611acc45f'
+                                key: {
+                                    name: 'u_hr_mtg_config'
+                                    caption: 'Default Availability Schedule'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'default_schedule_span'
+                            position: '1'
                         }
                     },
                     {
@@ -2696,6 +2859,36 @@ declare global {
                         key: {
                             document_key: '74068a24f41a4f98ae0c3028476dcc5e'
                             variable: '915990ab531000109e02ddeeff7b12f8'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ed8fee46749f440cb489d3c8276eee44'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f809375bd38b4f1c87aaa72611acc45f'
+                                key: {
+                                    name: 'u_hr_mtg_config'
+                                    caption: 'Default Availability Schedule'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'default_schedule'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_choice_set'
+                        id: 'ee3da121fa824ffd9e6563b718b49047'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'availability_source'
                         }
                     },
                     {
@@ -2800,6 +2993,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'f809375bd38b4f1c87aaa72611acc45f'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            caption: 'Default Availability Schedule'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_variable_value'
                         id: 'f81afd04859d42aaa9826cc75b983202'
                         deleted: false
@@ -2858,6 +3066,15 @@ declare global {
                                     name: 'global.hr_mtg_admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fa96ebbe5e644a5eaa5f415447d29516'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            element: 'availability_source'
+                            language: 'en'
                         }
                     },
                     {
