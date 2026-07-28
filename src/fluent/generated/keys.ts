@@ -496,6 +496,16 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '02ceca16c35acb900deb9e377d01311d'
+                        key: {
+                            name: 'u_hr_mtg_config'
+                            caption: 'NULL'
+                            view: 'NULL'
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '02f21ba356604d8c88eb43a2673fd630'
                         key: {
