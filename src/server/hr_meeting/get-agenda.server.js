@@ -152,9 +152,9 @@
         return parts.length > 1 ? parts[1] : dateTimeStr
     }
 
-    // Reads the single u_hr_mtg_config record's default_schedule_span (mandatory, and filtered
-    // on the form to schedule=default_schedule AND show_as=free) and expands it into recurring
-    // windows. availability_source is checked first: "outlook" is a reserved placeholder for a
+    // Reads the single u_hr_mtg_config record's u_default_schedule_span (mandatory, and filtered
+    // on the form to schedule=u_default_schedule AND show_as=free) and expands it into recurring
+    // windows. u_availability_source is checked first: "outlook" is a reserved placeholder for a
     // future integration and isn't implemented yet, so it currently yields no windows (safer
     // than silently falling through to the schedule) rather than "schedule".
     //
@@ -162,18 +162,22 @@
     // form only constrains what a user can newly pick in the UI, it does not stop a script or
     // direct API call from writing a non-conforming value, so this does not trust the stored
     // reference blindly.
+    //
+    // Field names carry a u_ prefix because these fields were created manually via the table's
+    // Column editor (the platform enforces this prefix on custom columns added through the UI),
+    // not via the Fluent Table() schema, which was never able to apply to this table on install.
     function getDefaultAvailabilityWindows() {
         var configGr = new GlideRecord(CONFIG_TABLE)
         configGr.setLimit(1)
         configGr.query()
         if (!configGr.next()) return []
 
-        var source = configGr.getValue('availability_source') || 'schedule'
+        var source = configGr.getValue('u_availability_source') || 'schedule'
         if (source !== 'schedule') return []
 
-        var spanId = configGr.getValue('default_schedule_span')
+        var spanId = configGr.getValue('u_default_schedule_span')
         if (!spanId) return []
-        var scheduleId = configGr.getValue('default_schedule')
+        var scheduleId = configGr.getValue('u_default_schedule')
 
         var spanGr = new GlideRecord(SCHEDULE_SPAN_TABLE)
         if (!spanGr.get(spanId)) return []

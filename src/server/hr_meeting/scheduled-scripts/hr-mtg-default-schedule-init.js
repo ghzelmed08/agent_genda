@@ -63,10 +63,10 @@
     configGr.query()
 
     if (configGr.next()) {
-        // Config record exists — only update default_schedule if it is currently empty
-        var currentSchedule = configGr.getValue('default_schedule')
+        // Config record exists — only update u_default_schedule if it is currently empty
+        var currentSchedule = configGr.getValue('u_default_schedule')
         if (!currentSchedule) {
-            configGr.setValue('default_schedule', scheduleSysId)
+            configGr.setValue('u_default_schedule', scheduleSysId)
             configGr.update()
             gs.info('HR Agent Agenda install: Updated existing config with default schedule.')
         } else {
@@ -75,7 +75,7 @@
     } else {
         // Config record does not exist — create it
         configGr.initialize()
-        configGr.setValue('default_schedule', scheduleSysId)
+        configGr.setValue('u_default_schedule', scheduleSysId)
         configGr.insert()
         gs.info('HR Agent Agenda install: Created config record with default schedule.')
     }

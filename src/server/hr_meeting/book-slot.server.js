@@ -133,12 +133,12 @@
         configGr.query()
         if (!configGr.next()) return []
 
-        var source = configGr.getValue('availability_source') || 'schedule'
+        var source = configGr.getValue('u_availability_source') || 'schedule'
         if (source !== 'schedule') return []
 
-        var spanId = configGr.getValue('default_schedule_span')
+        var spanId = configGr.getValue('u_default_schedule_span')
         if (!spanId) return []
-        var scheduleId = configGr.getValue('default_schedule')
+        var scheduleId = configGr.getValue('u_default_schedule')
 
         var spanGr = new GlideRecord(SCHEDULE_SPAN_TABLE)
         if (!spanGr.get(spanId)) return []

@@ -77,9 +77,9 @@ Form({
         {
           layout: "one-column",
           elements: [
-            { field: "default_schedule", type: "table_field" },
-            { field: "default_schedule_span", type: "table_field" },
-            { field: "availability_source", type: "table_field" },
+            { field: "u_default_schedule", type: "table_field" },
+            { field: "u_default_schedule_span", type: "table_field" },
+            { field: "u_availability_source", type: "table_field" },
           ],
         },
       ],
@@ -88,23 +88,23 @@ Form({
 });
 
 // Clears the previously-selected span whenever the schedule changes, since a span from the
-// old schedule would otherwise remain selected (and fail the default_schedule_span reference
-// qualifier, which requires schedule = the currently selected default_schedule).
+// old schedule would otherwise remain selected (and fail the u_default_schedule_span reference
+// qualifier, which requires schedule = the currently selected u_default_schedule).
 ClientScript({
   $id: Now.ID["cs_config_clear_span_on_schedule_change"],
   name: "Clear Default Schedule Span on Schedule Change",
   table: "u_hr_mtg_config",
   type: "onChange",
-  field: "default_schedule",
+  field: "u_default_schedule",
   uiType: "all",
   active: true,
   isolateScript: false,
   appliesExtended: false,
-  description: "Clears default_schedule_span whenever default_schedule changes, since it would otherwise still reference a span from the previous schedule.",
+  description: "Clears u_default_schedule_span whenever u_default_schedule changes, since it would otherwise still reference a span from the previous schedule.",
   script: `function onChange(control, oldValue, newValue, isLoading, isTemplate) {
         if (isLoading || newValue === oldValue) {
             return;
         }
-        g_form.setValue('default_schedule_span', '');
+        g_form.setValue('u_default_schedule_span', '');
     }`,
 });
