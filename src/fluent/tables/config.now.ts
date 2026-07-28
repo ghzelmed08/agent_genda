@@ -25,17 +25,13 @@ export const u_hr_mtg_config = Table({
       referenceTable: "cmn_schedule",
       mandatory: false,
     }),
-    // Mandatory and filtered to spans of the selected default_schedule with show_as=free --
-    // there is no way to save a config pointing at a busy/tentative span, or a span that
-    // belongs to a different schedule. A client script clears this field whenever
-    // default_schedule changes (see forms.now.ts), since a previously-selected span would
-    // otherwise silently belong to the old schedule.
+    // TEMP DIAGNOSTIC: advanced javascript: referenceQual stripped out to test whether it is
+    // what silently prevents this whole table's schema from being applied on install. Revert to
+    // the advanced qualifier once confirmed/denied.
     default_schedule_span: ReferenceColumn({
       label: "Default Schedule Span",
       referenceTable: "cmn_schedule_span",
       mandatory: true,
-      useReferenceQualifier: "advanced",
-      referenceQual: "javascript:'schedule=' + current.default_schedule + '^show_as=free'",
     }),
     // Anchor point for a future availability source (e.g. Outlook Calendar). Only "schedule"
     // is implemented today; "outlook" is a reserved placeholder.
